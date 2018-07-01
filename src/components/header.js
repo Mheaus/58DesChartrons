@@ -1,33 +1,33 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { push } from 'gatsby-link'
+import styled from 'styled-components'
 
-const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+const Layout = styled.header`
+  background: #FFF;
+  display: flex;
+  padding: 2rem 1rem;
+  .header__group-left {
+    display: flex;
+  }
+  .header__title {
+    font-size: 1rem;
+    font-weight: normal;
+    letter-spacing: .75px;
+    margin: 0 1rem;
+    text-transform: uppercase;
+  }
+`
+
+const Header = ({ titles }) => (
+  <Layout className="header">
+    <div className="header__group-left">
+      {titles.map(title =>
+        <h1 className="header__title" onClick={() => window.___history.push(`/${title.name}`)}>
+          {title.name}
+        </h1>
+      )}
     </div>
-  </div>
+  </Layout>
 )
 
 export default Header
