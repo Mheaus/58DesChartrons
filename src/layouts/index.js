@@ -4,10 +4,9 @@ import Helmet from 'react-helmet'
 
 import Header from '../components/header'
 import '../assets'
-import './index.css'
 
 const Layout = ({ children, data }) => (
-  <div>
+  <div style={{height: "100%"}}>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -16,11 +15,11 @@ const Layout = ({ children, data }) => (
       ]}
     />
     <Header titles={[
-      {name: "appartements", url: "index"},
-      {name: "emplacement", url: "index"},
-      {name: "contact", url: "index"}
+      {name: "appartements", url: ""},
+      {name: "emplacement", url: "maps"},
+      {name: "contact", url: "contact"}
     ]}/>
-    <div>
+    <div style={{height: "calc(100% - 4.65rem)"}}>
       {children()}
     </div>
   </div>

@@ -1,1 +1,2 @@
-import './Open_Sans/open-sans.css'
+import './fonts/'
+import './css/'
