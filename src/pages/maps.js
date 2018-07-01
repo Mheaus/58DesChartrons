@@ -1,5 +1,7 @@
 import React from 'react'
+import styled from 'styled-components'
 import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
+import Contact from '../components/Contact.js'
 
 const MapsPage = () => (
   <Map
@@ -11,6 +13,27 @@ const MapsPage = () => (
   />
 )
 
+const CardContact = styled.div`
+  background: #FFF;
+  border-radius: 3px;
+  height: 10rem;
+  padding: 1rem 0 0 2rem;
+  position: absolute;
+  right: .75rem;
+  top: 5.25rem;
+  width: 32rem;
+  .contact__form {
+    background: #FFF;
+    margin-left: -2rem;
+    padding: 0 0 1rem 2rem;
+    &.contact__form--open {
+      height: 21rem;
+      .contact__form__submit {
+        bottom: 1.25rem;
+      }
+    }
+  }
+`
 
 const Map = withScriptjs(withGoogleMap((props) => (
   <GoogleMap
@@ -18,6 +41,9 @@ const Map = withScriptjs(withGoogleMap((props) => (
     defaultCenter={{ lat: 44.8579528, lng: -0.5669075 }}
   >
     {props.isMarkerShown && <Marker position={{ lat: 44.8579528, lng: -0.5669075 }} />}
+    <CardContact>
+      <Contact />
+    </CardContact>
   </GoogleMap>
 )))
 

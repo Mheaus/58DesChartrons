@@ -17,7 +17,6 @@ const Layout = ({ children, data }) => (
     <Header titles={[
       {name: "appartements", url: ""},
       {name: "emplacement", url: "maps"},
-      {name: "contact", url: "contact"}
     ]}/>
     <div style={{height: "calc(100% - 4.65rem)"}}>
       {children()}
@@ -31,6 +30,7 @@ Layout.propTypes = {
 
 export default Layout
 
+// eslint-disable-next-line
 export const query = graphql`
   query SiteTitleQuery {
     site {
