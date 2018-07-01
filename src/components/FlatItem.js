@@ -33,6 +33,15 @@ const Flat = styled.div`
       position: absolute;
       width: 6rem;
     }
+    &::before {
+      background-color: #e7e7e7;
+      bottom: .5px;
+      content: "";
+      height: .075rem;
+      left: 0;
+      position: absolute;
+      width: 100%;
+    }
   }
 `
 

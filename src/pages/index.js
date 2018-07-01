@@ -20,7 +20,6 @@ const Layout = styled.div`
     overflow-y: scroll;
     width: 50%;
     &.index__side--left {
-      background: cyan;
       float: left;
     }
     &.index__side--right {
@@ -34,7 +33,7 @@ const Layout = styled.div`
 const IndexPage = () => (
   <Layout className="index">
     <div className="index__side index__side--left">
-
+      
     </div>
     <section className="index__side index__side--right">
       <Contact />
