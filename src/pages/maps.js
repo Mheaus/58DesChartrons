@@ -41,6 +41,7 @@ const Map = withScriptjs(withGoogleMap((props) => (
     defaultCenter={{ lat: 44.8579528, lng: -0.5669075 }}
   >
     {props.isMarkerShown && <Marker position={{ lat: 44.8579528, lng: -0.5669075 }} />}
+    {props.isMarkerShown && <Marker position={{ lat: 44.858836, lng: -0.570341 }} />}
     <CardContact>
       <Contact />
     </CardContact>
