@@ -54,7 +54,7 @@ export default class FlatItem extends React.PureComponent {
     return (
       <Flat
         className="flat-item"
-        onClick={() => window.___history.push(`/appartements/${flat.id}`)}
+        onClick={() => window.___history.push(`/flats/${flat.id}`)}
         onMouseOver={this.props.onItemHover}
       >
         <span className="flat-item__id">{this.formatId(flat.id)}</span>

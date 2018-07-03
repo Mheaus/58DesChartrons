@@ -5,10 +5,10 @@ import FlatItem from '../components/FlatItem.js'
 import FlatHighlight from '../components/FlatHighlight.js'
 import Contact from '../components/Contact.js'
 
-import flat1Cover from '../assets/image/terrasse-des-chartrons/living_room1.jpg'
-import flat2Cover from '../assets/image/terrasse-des-chartrons/living_room3.jpg'
-import flat3Cover from '../assets/image/58-des-chartrons/living_room3.jpg'
-import flat4Cover from '../assets/image/jardin-des-chartrons/living_room2.jpeg'
+import flat1Cover from '../assets/image/42-rue-binaud/living_room3.jpg'
+import flat2Cover from '../assets/image/terrasse-des-chartrons/living_room3-min.jpg'
+import flat3Cover from '../assets/image/58-des-chartrons/living_room3-min.jpg'
+import flat4Cover from '../assets/image/jardin-des-chartrons/living_room2-min.jpeg'
 
 const flats = [
   {
@@ -73,7 +73,6 @@ class IndexPage extends React.Component {
   }
 
   changeCurrentFlat = (flatId) => {
-    console.log(flatId);
     this.setState({
       selectedFlat: flats[flatId]
     })
