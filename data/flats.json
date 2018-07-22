@@ -4,87 +4,31 @@
     "name": "La Maison",
     "surface": 110,
     "description": "Spacieuse et agréable : composé d'un salon de 45m² et de sa cuisine toute équipée, d'une suite parentale, d'une chambre mansardée, d'une mezzanine et d'une terrasse privative de 30m² équipée d'un salon de jardin.",
-    "cover": "./42-rue-binaud/living_room3.jpg",
-    "rooms": {
-      "salle_de_bain": {
-        "1": "./42-rue-binaud/bathroom1.jpg",
-        "2": "./42-rue-binaud/bathroom2.jpg",
-        "3": "./42-rue-binaud/bathroom3.jpg",
-        "4": "./42-rue-binaud/bathroom4.jpg",
-        "5": "./42-rue-binaud/bathroom5.jpg",
-        "6": "./42-rue-binaud/bathroom6.jpg"
-      },
-      "dressing": {
-        "1": "./42-rue-binaud/dressing1.jpg"
-      },
-      "cuisine": {
-        "1": "./42-rue-binaud/kitchen1.jpg",
-        "2": "./42-rue-binaud/kitchen2.jpg",
-        "3": "./42-rue-binaud/kitchen3.jpg",
-        "4": "./42-rue-binaud/kitchen4.jpg",
-        "5": "./42-rue-binaud/kitchen5.jpg",
-        "6": "./42-rue-binaud/kitchen6.jpg"
-      },
-      "salon": {
-        "1": "./42-rue-binaud/living_room1.jpg",
-        "2": "./42-rue-binaud/living_room2.jpg",
-        "3": "./42-rue-binaud/living_room3.jpg",
-        "4": "./42-rue-binaud/living_room4.jpg",
-        "5": "./42-rue-binaud/living_room5.jpg",
-        "6": "./42-rue-binaud/living_room6.jpg",
-        "7": "./42-rue-binaud/living_room7.jpg",
-        "8": "./42-rue-binaud/living_room8.jpg"
-      },
-      "extérieur": {
-        "1": "./42-rue-binaud/outdoor1.jpg",
-        "2": "./42-rue-binaud/outdoor2.jpg",
-        "3": "./42-rue-binaud/outdoor3.jpg",
-        "4": "./42-rue-binaud/outdoor4.jpg",
-        "5": "./42-rue-binaud/outdoor5.jpg",
-        "6": "./42-rue-binaud/outdoor6.jpg",
-        "7": "./42-rue-binaud/outdoor7.jpg",
-        "8": "./42-rue-binaud/outdoor8.jpg",
-        "9": "./42-rue-binaud/outdoor9.jpg"
-      },
-      "chambre 1": {
-        "1": "./42-rue-binaud/room1_1.jpg",
-        "2": "./42-rue-binaud/room1_2.jpg"
-      },
-      "chambre 2": {
-        "1": "./42-rue-binaud/room2_1.jpg",
-        "2": "./42-rue-binaud/room2_2.jpg",
-        "3": "./42-rue-binaud/room2_3.jpg",
-        "4": "./42-rue-binaud/room2_4.jpg"
-      },
-      "chambre 3": {
-        "1": "./42-rue-binaud/room3_1.jpg",
-        "2": "./42-rue-binaud/room3_2.jpg"
-      },
-      "chambre 4": {
-        "1": "./42-rue-binaud/room4_1.jpg",
-        "2": "./42-rue-binaud/room4_2.jpg"
-      }
-    }
+    "cover": "./42-rue-binaud/living_room2.jpg",
+    "imagesDirectory": "42-rue-binaud"
   },
   {
     "id": "2",
     "name": "Le Palier",
     "surface": 110,
     "description": "Venez découvrir le quartier des Chartrons à 5 min à pied des quais. L'appartement située au 1er étage sans ascenseur a été totalement réhabilité et rénové. L'espace de vie est adaptée aux familles ou groupe d'amis.",
-    "cover": "./terrasse-des-chartrons/living_room3-min.jpg"
+    "cover": "./terrasse-des-chartrons/living_room3-min.jpg",
+    "imagesDirectory": "terrasse-des-chartrons"
   },
   {
     "id": "3",
     "name": "Le Second",
     "surface": 110,
     "description": "Appartement de 110 m2 baignée de lumière avec sa terrasse sur les toits. Située au deuxième étage sans ascenseur d un immeuble entièrement rénové.",
-    "cover": "./58-des-chartrons/living_room3-min.jpg"
+    "cover": "./58-des-chartrons/living_room3-min.jpg",
+    "imagesDirectory": "58-des-chartrons"
   },
   {
     "id": "4",
     "name": "Le Terre-à-Terre",
     "surface": 100,
     "description": "Bienvenue chez vous. Un week-end, des vacances,passez un bon moment de tranquillité dans cette appartement composé de 3 chambres avec sa terrasse/jardin arboré. Située en rez de chaussé, l'appartement a été entièrement réhabilité avec soin.",
-    "cover": "./jardin-des-chartrons/living_room2-min.jpeg"
+    "cover": "./jardin-des-chartrons/living_room2-min.jpeg",
+    "imagesDirectory": "jardin-des-chartrons"
   }
 ]

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { FlatItem, FlatHighlight, Contact } from '../components'
-import indexCover from '../assets/image/58-des-chartrons/living_room3-min.jpg'
 
 const Layout = styled.div`
   height: 100%;
@@ -30,21 +29,24 @@ class IndexPage extends React.Component {
       selectedFlat: {
         name: "4 Locations près du centre et des quais de Bordeaux",
         description: "Facile d'accès, situé dans le quartier des Chartrons. Idéal pour les familles.",
-        cover: indexCover
+        cover: this.props.data.defaultCover.childImageSharp.original.src
       }
     };
   }
 
   changeCurrentFlat = (flatId) => {
-    const flats = Object.values(this.props.data.allFlatsJson.edges)
+    const flat = Object.values(this.props.data.allFlatsJson.edges)[flatId].node
+    const cover = flat.cover.childImageSharp.original.src
     this.setState({
-      selectedFlat: flats[flatId].node
+      selectedFlat: {
+        ...flat,
+        cover: cover
+      }
     })
   }
 
   render() {
     const flats = this.props.data.allFlatsJson.edges
-    console.log(flats);
     return (
       <Layout className="index">
         <div className="index__side index__side--left">
@@ -75,7 +77,7 @@ export default IndexPage;
 // loaded as plain JSON files so have minimal client cost.
 // eslint-disable-next-line
 export const indexPageQuery = graphql`
-  query FlatsQuery {
+  query FlatsQuery($directoryName: String) {
     # Select the flat which equals this id.
     allFlatsJson {
       edges {
@@ -85,8 +87,31 @@ export const indexPageQuery = graphql`
           surface
           description
           cover {
-          	id
+            childImageSharp {
+              original {
+                src
+              }
+            }
           }
+        }
+      }
+    }
+    defaultCover: file(name: {eq: "living_room3-min"}) {
+      childImageSharp {
+      	original {
+          src
+        }
+    	}
+    }
+    allFile(filter: {
+      sourceInstanceName: {eq: "data"},
+      dir: {regex: $directoryName},
+      extension: {eq: "jpg"}
+    }) {
+      edges {
+        node {
+        	extension
+          name
         }
       }
     }

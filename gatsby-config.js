@@ -27,13 +27,22 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: `images`, // you can use multiple source-filesystem instances
+        path: path.join(__dirname, 'data'),
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages/`,
       },
     },
+    `gatsby-plugin-sharp`,
     // This plugin transforms JSON file nodes.
     'gatsby-transformer-json',
+    `gatsby-transformer-sharp`,
   ],
 }

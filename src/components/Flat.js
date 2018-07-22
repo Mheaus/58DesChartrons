@@ -3,23 +3,17 @@ import React, { PureComponent } from 'react'
 import { Contact, RoomList, FlatDetails } from '../components/';
 import { StyledFlatLayout } from '../style'
 
-function importAll(r) {
-  return r.keys().map(r);
-}
-
-const flatImages = importAll(require.context('../assets/image/42-rue-binaud/', false, /\.(png|jpe?g|svg)$/));
-
 const flat = {
   rooms: {
-    salle_de_bain: [...flatImages.slice(0, 5)],
-    dressing: [...flatImages[6]],
-    cuisine: [...flatImages.slice(7, 12)],
-    salon: [...flatImages.slice(13, 20)],
-    extérieur: [...flatImages.slice(21, 29)],
-    chambre_1: [...flatImages.slice(30, 31)],
-    chambre_2: [...flatImages.slice(32, 35)],
-    chambre_3: [...flatImages.slice(36, 37)],
-    chambre_4: [...flatImages.slice(38, 40)],
+    // salle_de_bain: [...flatImages.slice(0, 5)],
+    // dressing: [...flatImages[6]],
+    // cuisine: [...flatImages.slice(7, 12)],
+    // salon: [...flatImages.slice(13, 20)],
+    // extérieur: [...flatImages.slice(21, 29)],
+    // chambre_1: [...flatImages.slice(30, 31)],
+    // chambre_2: [...flatImages.slice(32, 35)],
+    // chambre_3: [...flatImages.slice(36, 37)],
+    // chambre_4: [...flatImages.slice(38, 40)],
   }
 }
 
