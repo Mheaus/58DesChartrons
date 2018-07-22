@@ -3,20 +3,6 @@ import React, { PureComponent } from 'react'
 import { Contact, RoomList, FlatDetails } from '../components/';
 import { StyledFlatLayout } from '../style'
 
-const flat = {
-  rooms: {
-    // salle_de_bain: [...flatImages.slice(0, 5)],
-    // dressing: [...flatImages[6]],
-    // cuisine: [...flatImages.slice(7, 12)],
-    // salon: [...flatImages.slice(13, 20)],
-    // extérieur: [...flatImages.slice(21, 29)],
-    // chambre_1: [...flatImages.slice(30, 31)],
-    // chambre_2: [...flatImages.slice(32, 35)],
-    // chambre_3: [...flatImages.slice(36, 37)],
-    // chambre_4: [...flatImages.slice(38, 40)],
-  }
-}
-
 const FlatDetailsImage = ({ isVisible, imageUrl }) => (
   <div className={`flat__image${ isVisible ? " flat__image--visible": ""}`}>
     <img src={imageUrl} alt="flat" />
@@ -26,22 +12,27 @@ const FlatDetailsImage = ({ isVisible, imageUrl }) => (
 class Flat extends PureComponent {
   constructor(props) {
     super(props);
+
+    const { flat } = this.props
+    const background = flat.cover.childImageSharp.original.src
+
     this.state = {
-      background: flat.rooms.salon[6],
+      background: background,
       isImageVisible: false,
     }
   }
 
   render() {
-
+    const { rooms } = this.props;
+    const { background, isImageVisible } = this.state;
     return(
-      <StyledFlatLayout className="flat" background={this.state.background}>
+      <StyledFlatLayout className="flat" background={background}>
 
         <div className="flat__background"></div>
         <div className="col col--right">
 
           <RoomList
-            rooms={flat.rooms}
+            rooms={rooms}
             onImageClick={(image) => this.setState({background: image})}
             isAnyRoomOpen={(bool) => this.setState({isImageVisible: bool})}
           />
@@ -52,8 +43,8 @@ class Flat extends PureComponent {
         <div className="col col--left">
 
           <FlatDetailsImage  
-            isVisible={this.state.isImageVisible}
-            imageUrl={this.state.background}
+            isVisible={isImageVisible}
+            imageUrl={background}
           />
 
           <FlatDetails className="flat__info">
@@ -103,5 +94,24 @@ export const flatFragment = graphql`
     id
     name
     description
+    cover {
+      childImageSharp {
+        original {
+          src
+        }
+      }
+    }
+  }
+  fragment Flat_Images on File {
+    name
+    extension
+    childImageSharp {
+      resolutions {
+        originalName
+      }
+      original {
+        src
+      }
+    }
   }
 `

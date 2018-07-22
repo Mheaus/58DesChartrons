@@ -5,7 +5,7 @@
     "surface": 110,
     "description": "Spacieuse et agréable : composé d'un salon de 45m² et de sa cuisine toute équipée, d'une suite parentale, d'une chambre mansardée, d'une mezzanine et d'une terrasse privative de 30m² équipée d'un salon de jardin.",
     "cover": "./42-rue-binaud/living_room2.jpg",
-    "imagesDirectory": "42-rue-binaud"
+    "ImageDirectoryName": "42-rue-binaud"
   },
   {
     "id": "2",
@@ -13,7 +13,7 @@
     "surface": 110,
     "description": "Venez découvrir le quartier des Chartrons à 5 min à pied des quais. L'appartement située au 1er étage sans ascenseur a été totalement réhabilité et rénové. L'espace de vie est adaptée aux familles ou groupe d'amis.",
     "cover": "./terrasse-des-chartrons/living_room3-min.jpg",
-    "imagesDirectory": "terrasse-des-chartrons"
+    "ImageDirectoryName": "terrasse-des-chartrons"
   },
   {
     "id": "3",
@@ -21,7 +21,7 @@
     "surface": 110,
     "description": "Appartement de 110 m2 baignée de lumière avec sa terrasse sur les toits. Située au deuxième étage sans ascenseur d un immeuble entièrement rénové.",
     "cover": "./58-des-chartrons/living_room3-min.jpg",
-    "imagesDirectory": "58-des-chartrons"
+    "ImageDirectoryName": "58-des-chartrons"
   },
   {
     "id": "4",
@@ -29,6 +29,6 @@
     "surface": 100,
     "description": "Bienvenue chez vous. Un week-end, des vacances,passez un bon moment de tranquillité dans cette appartement composé de 3 chambres avec sa terrasse/jardin arboré. Située en rez de chaussé, l'appartement a été entièrement réhabilité avec soin.",
     "cover": "./jardin-des-chartrons/living_room2-min.jpeg",
-    "imagesDirectory": "jardin-des-chartrons"
+    "ImageDirectoryName": "jardin-des-chartrons"
   }
 ]
