@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 
-import { Contact, RoomList, ContentCard } from '../components/';
-import StyledFlatLayout from '../style';
+import { Contact, RoomList, FlatDetails } from '../components/';
+import { StyledFlatLayout } from '../style'
 
 function importAll(r) {
   return r.keys().map(r);
@@ -23,7 +23,13 @@ const flat = {
   }
 }
 
-class Flat extends React.PureComponent {
+const FlatDetailsImage = ({ isVisible, imageUrl }) => (
+  <div className={`flat__image${ isVisible ? " flat__image--visible": ""}`}>
+    <img src={imageUrl} alt="flat" />
+  </div>
+)
+
+class Flat extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,23 +37,32 @@ class Flat extends React.PureComponent {
       isImageVisible: false,
     }
   }
+
   render() {
+
     return(
       <StyledFlatLayout className="flat" background={this.state.background}>
+
         <div className="flat__background"></div>
         <div className="col col--right">
+
           <RoomList
             rooms={flat.rooms}
             onImageClick={(image) => this.setState({background: image})}
             isAnyRoomOpen={(bool) => this.setState({isImageVisible: bool})}
           />
+
           <Contact />
+
         </div>
         <div className="col col--left">
-          <div className={`flat__image${this.state.isImageVisible ? " flat__image--visible": ""}`}>
-            <img src={this.state.background} alt="flat" />
-          </div>
-          <ContentCard className="flat__info">
+
+          <FlatDetailsImage  
+            isVisible={this.state.isImageVisible}
+            imageUrl={this.state.background}
+          />
+
+          <FlatDetails className="flat__info">
             <h1>Maison+terrasse/Bordeaux Chartrons</h1>
             <p>En plein coeur des Chartrons au calme à 10 m à pied des quais et du centre , maison spacieuse et agréable ; salon de 45 M2 et sa cuisine toute équipée, une suite parentale, une chambre mansardée et une mezzanine,d'une terrasse privative de 30 M2 équipée d'un salon de jardin...</p>
             <h3>Le logement</h3>
@@ -79,7 +94,8 @@ class Flat extends React.PureComponent {
             <h3>Autres remarques</h3>
             <p>Des dépliants sont à votre disposition pour des idées de circuits touristiques, Wine Tour, des bons plans aux alentours, des musées, des zoos, des plages, parc aquatique.....
               Une machine à café tassimo est mise à votre disposition. Pensez à emporter des capsules si vous le désirez.</p>
-          </ContentCard>
+          </FlatDetails>
+
         </div>
       </StyledFlatLayout>
     )

@@ -1,14 +1,15 @@
 import * as PropTypes from "prop-types"
-import React from "react"
-import Flat from '../components/flat'
+import React, { Component } from "react"
+import { Flat } from '../components'
 
-class PostTemplate extends React.Component {
+class PostTemplate extends Component {
   static propTypes = {
     data: PropTypes.shape({
       flatsJson: PropTypes.object.isRequired,
     }),
   }
   render() {
+    console.log(Flat);
     return (
       <Flat />
     )
@@ -25,7 +26,7 @@ export default PostTemplate
 // loaded as plain JSON files so have minimal client cost.
 // eslint-disable-next-line
 export const pageQuery = graphql`
-  query FlatsQuery($id: String!) {
+  query FlatQuery($id: String!) {
     # Select the flat which equals this id.
     flatsJson(id: { eq: $id }) {
       ...Flat_details

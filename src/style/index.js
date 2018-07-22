@@ -1,4 +1,4 @@
 import './css';
-import StyledFlatLayout from './StyledFlatLayout';
+import StyledFlatLayout from './StyledFlatLayout'
 
-export default StyledFlatLayout;
+export { StyledFlatLayout }

@@ -2,42 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 import { FlatItem, FlatHighlight, Contact } from '../components'
-
-import flat1Cover from '../assets/image/42-rue-binaud/living_room3.jpg'
-import flat2Cover from '../assets/image/terrasse-des-chartrons/living_room3-min.jpg'
-import flat3Cover from '../assets/image/58-des-chartrons/living_room3-min.jpg'
-import flat4Cover from '../assets/image/jardin-des-chartrons/living_room2-min.jpeg'
-
-const flats = [
-  {
-    id: 1,
-    name: "La Maison",
-    surface: 110,
-    description: "Spacieuse et agréable : composé d'un salon de 45m² et de sa cuisine toute équipée, d'une suite parentale, d'une chambre mansardée, d'une mezzanine et d'une terrasse privative de 30m² équipée d'un salon de jardin.",
-    cover: flat1Cover
-  },
-  {
-    id: 2,
-    name: "Le Premier",
-    surface: 110,
-    description: "Venez découvrir le quartier des Chartrons à 5 min à pied des quais. L'appartement située au 1er étage sans ascenseur a été totalement réhabilité et rénové. L'espace de vie est adaptée aux familles ou groupe d'amis.",
-    cover: flat2Cover
-  },
-  {
-    id: 3,
-    name: "Le Second",
-    surface: 110,
-    description: "Appartement de 110 m2 baignée de lumière avec sa terrasse sur les toits. Située au deuxième étage sans ascenseur d un immeuble entièrement rénové.",
-    cover: flat3Cover
-  },
-  {
-    id: 4,
-    name: "Le Terre-à-Terre",
-    surface: 100,
-    description: "Bienvenue chez vous. Un week-end, des vacances,passez un bon moment de tranquillité dans cette appartement composé de 3 chambres avec sa terrasse/jardin arboré. Située en rez de chaussé, l'appartement a été entièrement réhabilité avec soin.",
-    cover: flat4Cover
-  },
-]
+import indexCover from '../assets/image/58-des-chartrons/living_room3-min.jpg'
 
 const Layout = styled.div`
   height: 100%;
@@ -65,18 +30,21 @@ class IndexPage extends React.Component {
       selectedFlat: {
         name: "4 Locations près du centre et des quais de Bordeaux",
         description: "Facile d'accès, situé dans le quartier des Chartrons. Idéal pour les familles.",
-        cover: flat3Cover
+        cover: indexCover
       }
     };
   }
 
   changeCurrentFlat = (flatId) => {
+    const flats = Object.values(this.props.data.allFlatsJson.edges)
     this.setState({
-      selectedFlat: flats[flatId]
+      selectedFlat: flats[flatId].node
     })
   }
 
   render() {
+    const flats = this.props.data.allFlatsJson.edges
+    console.log(flats);
     return (
       <Layout className="index">
         <div className="index__side index__side--left">
@@ -84,7 +52,7 @@ class IndexPage extends React.Component {
         </div>
         <section className="index__side index__side--right">
           <Contact />
-          {flats.map((flat, index) =>
+          {flats.map(({node: flat}, index) =>
             <FlatItem
               flat={flat}
               key={index}
@@ -97,5 +65,30 @@ class IndexPage extends React.Component {
   }
 }
 
-
 export default IndexPage;
+
+// The flat template's GraphQL query. Notice the “id”
+// variable which is passed in. We set this on the page
+// context in gatsby-node.js.
+//
+// All GraphQL queries in Gatsby are run at build-time and
+// loaded as plain JSON files so have minimal client cost.
+// eslint-disable-next-line
+export const indexPageQuery = graphql`
+  query FlatsQuery {
+    # Select the flat which equals this id.
+    allFlatsJson {
+      edges {
+        node {
+          id
+          name
+          surface
+          description
+          cover {
+          	id
+          }
+        }
+      }
+    }
+  }
+`

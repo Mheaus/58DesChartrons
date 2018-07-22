@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import styled from 'styled-components'
 
 const FlatItemLayout = styled.div`
@@ -45,7 +45,7 @@ const FlatItemLayout = styled.div`
   }
 `
 
-export default class FlatItem extends React.PureComponent {
+class FlatItem extends PureComponent {
   formatId = (id) => {
     return id < 10 ? `0${id}` : id
   }
@@ -66,3 +66,5 @@ export default class FlatItem extends React.PureComponent {
     )
   }
 }
+
+export default FlatItem;
