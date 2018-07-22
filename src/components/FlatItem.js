@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Flat = styled.div`
+const FlatItemLayout = styled.div`
   cursor: pointer;
   margin: 1rem 0 2rem;
   padding: 3rem 0 0 3rem;
@@ -52,7 +52,7 @@ export default class FlatItem extends React.PureComponent {
   render() {
     const { flat } = this.props;
     return (
-      <Flat
+      <FlatItemLayout
         className="flat-item"
         onClick={() => window.___history.push(`/flats/${flat.id}`)}
         onMouseOver={this.props.onItemHover}
@@ -62,7 +62,7 @@ export default class FlatItem extends React.PureComponent {
           <h3 className="flat-item__info__name">{flat.name}</h3>
           <p className="flat-item__info__description">{flat.description}</p>
         </div>
-      </Flat>
+      </FlatItemLayout>
     )
   }
 }

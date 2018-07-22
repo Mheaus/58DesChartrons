@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import FlatItem from '../components/FlatItem.js'
-import FlatHighlight from '../components/FlatHighlight.js'
-import Contact from '../components/Contact.js'
+import { FlatItem, FlatHighlight, Contact } from '../components'
 
 import flat1Cover from '../assets/image/42-rue-binaud/living_room3.jpg'
 import flat2Cover from '../assets/image/terrasse-des-chartrons/living_room3-min.jpg'
@@ -100,4 +98,4 @@ class IndexPage extends React.Component {
 }
 
 
-export default IndexPage
+export default IndexPage;

@@ -1,5 +1,4 @@
 import React from 'react'
-import { push } from 'gatsby-link'
 import styled from 'styled-components'
 
 const Layout = styled.header`

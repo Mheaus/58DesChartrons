@@ -46,7 +46,7 @@ const ContactLayout = styled.div`
     }
     .contact__header__airbnb-button {
       align-items: center;
-      background: #FFF;
+      background: #ff565c;
       border: none;
       border-radius: 4px;
       box-shadow:
@@ -61,6 +61,7 @@ const ContactLayout = styled.div`
       transition: all .15s;
       img {
         height: 2rem;
+        filter: brightness(500%);
       }
       &:hover {
         box-shadow:
@@ -132,6 +133,7 @@ const ContactLayout = styled.div`
       input {
         border: solid 1px #e9e9e9;
         border-radius: 3px;
+        transition: all .25s;
         &:focus {
           outline: none;
         }
@@ -143,6 +145,7 @@ const ContactLayout = styled.div`
         max-width: 100%;
         min-height: 10rem;
         max-height: 10rem;
+        transition: all .25s;
         &:focus {
           outline: none;
         }
@@ -156,10 +159,7 @@ const ContactLayout = styled.div`
       border: none;
       border-radius: 4px;
       bottom: .5rem;
-      box-shadow:
-        0 1px 3px 0 rgba(0, 0, 0, 0.2),
-        0 2px 1px -1px rgba(0, 0, 0, 0.12),
-        0 1px 1px 0 rgba(0, 0, 0, 0.14);
+      box-shadow: 0 0 2px 0 rgba(0, 0, 0, .75);
       cursor: pointer;
       display: flex;
       justify-content: center;
@@ -169,9 +169,15 @@ const ContactLayout = styled.div`
       right: 2rem;
       transition: all .3s;
       &:hover {
-        background: #c3c3c3;
+        background: #ff565c;
         color: white;
-        opacity: .75;
+        box-shadow:
+          0 1px 3px 0 rgba(0, 0, 0, 0.2),
+          0 2px 1px -1px rgba(0, 0, 0, 0.12),
+          0 1px 1px 0 rgba(0, 0, 0, 0.14);
+      }
+      &:focus {
+        outline: none;
       }
     }
   }

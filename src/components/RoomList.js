@@ -2,9 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Layout = styled.div`
-  float: right;
-  margin: 2rem;
-  width: 32rem;
+  
   .room-list__room {
 
   }
@@ -66,38 +64,51 @@ const Layout = styled.div`
   }
 `
 
-const RoomList = ({ rooms }) => {
-
-  const toggleRoomImages = (room) => {
-    document.querySelectorAll('.room').forEach(roomElement => {
-      if (roomElement.classList.contains('room--opened') && !roomElement.classList.contains(room)) {
-        roomElement.classList.remove('room--opened')
-      }
-    })
-    document.querySelector(`.${room}`).classList.toggle("room--opened")
+class RoomList extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      openRoomName: null
+    };
   }
-
-  return (
-    <Layout className="room-list">
-      {Object.entries(rooms).map(([key, images], index) => (
-        <div className={`room-list__room room ${key}`} key={index}>
-          <button className="room__title-expand-item" onClick={() => toggleRoomImages(key)}>
-            {key.split("_").join(" ")}
-            <svg aria-hidden="true" data-prefix="far" data-icon="angle-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
-              <path fill="currentColor" d="M187.8 264.5L41 412.5c-4.7 4.7-12.3 4.7-17 0L4.2 392.7c-4.7-4.7-4.7-12.3 0-17L122.7 256 4.2 136.3c-4.7-4.7-4.7-12.3 0-17L24 99.5c4.7-4.7 12.3-4.7 17 0l146.8 148c4.7 4.7 4.7 12.3 0 17z"/>
-            </svg>
-          </button>
-          <div className="room__items images">
-            {images.map((image, index) => (
-              <div className={`images__item images__item${index + 1}`} key={index}>
-                <img src={image} alt={`${key}${index + 1}`}/>
-              </div>
-            ))}
+  toggleOpen = (roomName) => {
+    if (this.props.isAnyRoomOpen) {
+      console.log(this.state.openRoomName === null || this.state.openRoomName !== roomName);
+      this.props.isAnyRoomOpen(this.state.openRoomName === null || this.state.openRoomName !== roomName)
+    }
+    if (this.state.openRoomName === roomName) this.setState(prevState => ({openRoomName: null}))
+    else this.setState(prevState => ({openRoomName: roomName}))
+  }
+  render() {
+    return (
+      <Layout className="room-list">
+        {Object.entries(this.props.rooms).map(([key, images], index) => (
+          <div
+            className={`room-list__room room ${key}${this.state.openRoomName === key ? " room--opened" : ""}`}
+            key={index}
+          >
+            <button className="room__title-expand-item" onClick={() => this.toggleOpen(key)}>
+              {key.split("_").join(" ")}
+              <svg aria-hidden="true" data-prefix="far" data-icon="angle-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 512">
+                <path fill="currentColor" d="M187.8 264.5L41 412.5c-4.7 4.7-12.3 4.7-17 0L4.2 392.7c-4.7-4.7-4.7-12.3 0-17L122.7 256 4.2 136.3c-4.7-4.7-4.7-12.3 0-17L24 99.5c4.7-4.7 12.3-4.7 17 0l146.8 148c4.7 4.7 4.7 12.3 0 17z"/>
+              </svg>
+            </button>
+            <div className="room__items images">
+              {images.map((image, index) => (
+                <div
+                  className={`images__item images__item${index + 1}`}
+                  key={index}
+                  onClick={() => this.props.onImageClick(image)}
+                >
+                  <img src={image} alt={`${key}${index + 1}`}/>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
-    </Layout>
-  )
+        ))}
+      </Layout>
+    )
+  }
 }
 
 export default RoomList;
