@@ -19,7 +19,8 @@ const StyledFlatDetailsImage = `
       transition: all .1s;
     }
     &.flat__image--visible {
-      height: 32rem;
+      height: 40rem;
+      height: 40rem;
       margin: 1rem;
       opacity: 1;
       padding: 2rem 1rem;
