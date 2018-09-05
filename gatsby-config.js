@@ -1,4 +1,4 @@
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   siteMetadata: {
@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-styled-components`,
     /*
      * Gatsby's data processing layer begins with “source”
      * plugins.  You can source data nodes from anywhere but
@@ -43,6 +44,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     // This plugin transforms JSON file nodes.
     'gatsby-transformer-json',
+    `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
   ],
 }

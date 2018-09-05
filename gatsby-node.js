@@ -42,11 +42,12 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
 
         // Create image flat pages.
-        const flatTemplate = path.resolve(`src/templates/flat-page.js`)
+        const flatTemplate = path.resolve(`src/templates/flat-page.jsx`)
         // We want to create a detailed page for each
         // Instagram flat. Since the scrapped Instagram data
         // already includes an ID field, we just use that for
         // each page's path.
+
         _.each(result.data.allFlatsJson.edges, edge => {
           // Gatsby uses Redux to manage its internal state.
           // Plugins and sites can use functions like "createPage"
@@ -64,8 +65,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             },
           })
         })
-
-        return
       })
     )
   })

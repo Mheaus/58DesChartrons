@@ -1,7 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-maps"
-import Contact from '../components/Contact.js'
+import {
+  withScriptjs,
+  withGoogleMap,
+  GoogleMap,
+  Marker,
+} from 'react-google-maps'
+import Contact from '../components'
 
 const MapsPage = () => (
   <Map
@@ -14,16 +19,16 @@ const MapsPage = () => (
 )
 
 const CardContact = styled.div`
-  background: #FFF;
+  background: #fff;
   border-radius: 3px;
   height: 10rem;
   padding: 1rem 0 0 2rem;
   position: absolute;
-  right: .75rem;
+  right: 0.75rem;
   top: 5.25rem;
   width: 32rem;
   .contact__form {
-    background: #FFF;
+    background: #fff;
     margin-left: -2rem;
     padding: 0 0 1rem 2rem;
     &.contact__form--open {
@@ -35,17 +40,23 @@ const CardContact = styled.div`
   }
 `
 
-const Map = withScriptjs(withGoogleMap((props) => (
-  <GoogleMap
-    defaultZoom={16}
-    defaultCenter={{ lat: 44.8579528, lng: -0.5669075 }}
-  >
-    {props.isMarkerShown && <Marker position={{ lat: 44.8579528, lng: -0.5669075 }} />}
-    {props.isMarkerShown && <Marker position={{ lat: 44.858836, lng: -0.570341 }} />}
-    <CardContact>
-      <Contact />
-    </CardContact>
-  </GoogleMap>
-)))
+const Map = withScriptjs(
+  withGoogleMap(props => (
+    <GoogleMap
+      defaultZoom={14}
+      defaultCenter={{ lat: 44.8579528, lng: -0.5669075 }}
+    >
+      {props.isMarkerShown && (
+        <Marker position={{ lat: 44.8579528, lng: -0.5669075 }} />
+      )}
+      {props.isMarkerShown && (
+        <Marker position={{ lat: 44.858836, lng: -0.570341 }} />
+      )}
+      <CardContact>
+        <Contact />
+      </CardContact>
+    </GoogleMap>
+  ))
+)
 
-export default MapsPage;
+export default MapsPage

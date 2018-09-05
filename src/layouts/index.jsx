@@ -2,12 +2,12 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 
-import Header from '../components/header'
+import { Header } from '../components'
 import '../assets'
-import '../style'
+import '../css'
 
 const Layout = ({ children, data }) => (
-  <div style={{height: "100%"}}>
+  <div style={{ height: '100%' }}>
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -15,21 +15,27 @@ const Layout = ({ children, data }) => (
         { name: 'keywords', content: 'sample, something' },
       ]}
     />
-    <Header titles={[
-      {name: "appartements", url: ""},
-      {name: "emplacement", url: "maps"},
-    ]}/>
-    <div style={{height: "calc(100% - 4.65rem)"}}>
-      {children()}
-    </div>
+    <Header
+      titles={[
+        { name: 'appartements', url: '' },
+        { name: 'emplacement', url: 'maps' },
+      ]}
+    />
+    <div style={{ height: 'calc(100% - 4.65rem)' }}>{children()}</div>
   </div>
 )
 
-Layout.propTypes = {
-  children: PropTypes.func,
+export default Layout
+
+Layout.defaultProps = {
+  data: {},
+  children: null,
 }
 
-export default Layout
+Layout.propTypes = {
+  data: PropTypes.shape({}),
+  children: PropTypes.element,
+}
 
 // eslint-disable-next-line
 export const query = graphql`

@@ -1,0 +1,39 @@
+{
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "parser": "babel-eslint",
+  "plugins": [
+    "prettier"
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "newline-after-var": 2,
+    "template-curly-spacing": 0,
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": ["___history"]
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": false,
+        "singleQuote": true,
+        "trailingComma": "es5"
+      }
+    ],
+    "jsx-a11y/label-has-for": [ 2, {
+      "components": [ "Label" ],
+      "required": {
+          "every": [ "" ]
+      },
+      "allowChildren": true
+    }]
+  }
+}

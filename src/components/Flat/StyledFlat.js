@@ -1,34 +1,8 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-const StyledFlatDetailsImage = `
-  .flat__image {
-    background: #FFF;
-    border-radius: 4px;
-    display: flex;
-    float: left;
-    height: 0;
-    justify-content: center;
-    margin: 0 1rem;
-    opacity: 0;
-    padding: 0;
-    transition: all .5s;
-    width: calc(100% - 2rem);
+import Flat from './Flat'
 
-    img {
-      max-height: 100%;
-      transition: all .1s;
-    }
-    &.flat__image--visible {
-      height: 40rem;
-      height: 40rem;
-      margin: 1rem;
-      opacity: 1;
-      padding: 2rem 1rem;
-    }
-  }
-`
-
-const StyledFlatLayout = styled.div`
+export default styled(Flat)`
   height: 100%;
   overflow: scroll;
   padding: 2rem 0;
@@ -65,9 +39,4 @@ const StyledFlatLayout = styled.div`
     width: 100%;
     z-index: -1;
   }
-
-  ${StyledFlatDetailsImage}
-
 `
-
-export default StyledFlatLayout;
