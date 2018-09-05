@@ -13,7 +13,7 @@ export default styled(Flat)`
       margin: 2rem;
       width: 32rem;
       .contact {
-        background: #FFF;
+        background: #fff;
         border-radius: 2px;
         margin-top: 1rem;
         padding: 1rem 0 0 1rem;
@@ -26,8 +26,7 @@ export default styled(Flat)`
     }
   }
   .flat__background {
-    background-color: #C6C6C6;
-    background-image: url("${props => props.background}");
+    background-color: #c6c6c6;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

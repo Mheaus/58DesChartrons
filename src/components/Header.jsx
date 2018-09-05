@@ -5,18 +5,22 @@ import styled from 'styled-components'
 const Header = ({ className, titles }) => (
   <header className={`header ${className}`}>
     <div className="header__group-left">
-      {titles.map((title, index) => (
-        <h1
-          key={index}
-          className={`header__title${
-            window.location.pathname.substr(1) === title.url
-              ? ' header__title--active'
-              : ' header__title--unactive'
-          }`}
+      {titles.map(title => (
+        <button
+          key={title.name}
           onClick={() => window.___history.push(`/${title.url}`)}
+          type="button"
         >
-          {title.name}
-        </h1>
+          <h1
+            className={`header__title${
+              window.location.pathname.substr(1) === title.url
+                ? ' header__title--active'
+                : ' header__title--unactive'
+            }`}
+          >
+            {title.name}
+          </h1>
+        </button>
       ))}
     </div>
   </header>

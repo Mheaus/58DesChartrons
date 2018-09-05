@@ -22,8 +22,11 @@ class Flat extends PureComponent {
     const { background, isImageVisible } = this.state
 
     return (
-      <div className={`flat ${className}`} background={background}>
-        <div className="flat__background" />
+      <div className={`flat ${className}`}>
+        <div
+          className="flat__background"
+          style={{ backgroundImage: `url(${background})` }}
+        />
         <div className="col col--right">
           <RoomList
             rooms={rooms}
