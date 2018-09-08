@@ -13,6 +13,7 @@ const Header = ({ className, titles }) => (
         >
           <h1
             className={`header__title${
+              typeof window !== 'undefined' &&
               window.location.pathname.substr(1) === title.url
                 ? ' header__title--active'
                 : ' header__title--unactive'

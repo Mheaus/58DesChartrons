@@ -29,12 +29,12 @@ export default Layout
 
 Layout.defaultProps = {
   data: {},
-  children: null,
+  children: () => null,
 }
 
 Layout.propTypes = {
   data: PropTypes.shape({}),
-  children: PropTypes.element,
+  children: PropTypes.func,
 }
 
 // eslint-disable-next-line
