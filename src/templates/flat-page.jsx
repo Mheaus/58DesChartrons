@@ -11,11 +11,13 @@ class FlatTemplate extends Component {
       const imageSrc = node.childImageSharp.original.src
       const roomName = /([a-z]+)/.exec(imageName)[0]
 
-      rooms[roomName]
-        ? Object.assign(rooms, {
-            [roomName]: [...rooms[roomName], imageSrc],
-          })
-        : Object.assign(rooms, { [roomName]: [imageSrc] })
+      if (rooms[roomName]) {
+        Object.assign(rooms, {
+          [roomName]: [...rooms[roomName], imageSrc],
+        })
+      } else {
+        Object.assign(rooms, { [roomName]: [imageSrc] })
+      }
     })
     return rooms
   }
@@ -23,11 +25,13 @@ class FlatTemplate extends Component {
   render() {
     const { data } = this.props
     const flatImages = data.allFile.edges.map(({ node }) => node)
+    const markdownData = data.allMarkdownRemark.edges[0].node
 
     return (
       <Flat
-        flat={data.flatsJson}
+        flat={{ ...data.flatsJson, content: markdownData.html }}
         flatImages={flatImages}
+        frontMatter={markdownData.frontmatter}
         rooms={this.createRoomsFromData(flatImages)}
       />
     )
@@ -58,7 +62,11 @@ FlatTemplate.propTypes = {
 // loaded as plain JSON files so have minimal client cost.
 // eslint-disable-next-line
 export const pageQuery = graphql`
-  query FlatQuery($id: String!, $imageDirectoryName: String!) {
+  query FlatQuery(
+    $id: String!
+    $directoryName: String!
+    $directoryPath: String!
+  ) {
     # Select the flat which equals this id.
     flatsJson(id: { eq: $id }) {
       ...Flat_details
@@ -66,13 +74,22 @@ export const pageQuery = graphql`
     allFile(
       filter: {
         sourceInstanceName: { eq: "data" }
-        dir: { regex: $imageDirectoryName }
+        dir: { regex: $directoryPath }
         extension: { eq: "jpg" }
       }
     ) {
       edges {
         node {
           ...Flat_Images
+        }
+      }
+    }
+    allMarkdownRemark(
+      filter: { frontmatter: { directoryName: { eq: $directoryName } } }
+    ) {
+      edges {
+        node {
+          ...Markdown
         }
       }
     }

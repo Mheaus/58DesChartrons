@@ -30,7 +30,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
               edges {
                 node {
                   id
-                  ImageDirectoryName
+                  directoryName
                 }
               }
             }
@@ -61,7 +61,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             component: slash(flatTemplate),
             context: {
               id: edge.node.id,
-              imageDirectoryName: `/${edge.node.ImageDirectoryName}/`,
+              directoryPath: `/${edge.node.directoryName}/`,
+              directoryName: edge.node.directoryName,
             },
           })
         })

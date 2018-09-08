@@ -18,7 +18,7 @@ class Flat extends PureComponent {
   }
 
   render() {
-    const { className, rooms } = this.props
+    const { className, flat, rooms } = this.props
     const { background, isImageVisible } = this.state
 
     return (
@@ -33,12 +33,13 @@ class Flat extends PureComponent {
             onImageClick={image => this.setState({ background: image })}
             isAnyRoomOpen={bool => this.setState({ isImageVisible: bool })}
           />
-
           <Contact />
         </div>
         <div className="col col--left">
           <FlatDetailsImage isVisible={isImageVisible} imageUrl={background} />
-          <FlatDetails className="flat__info">{/* content */}</FlatDetails>
+          <FlatDetails className="flat__info">
+            <div dangerouslySetInnerHTML={{ __html: flat.content }} />
+          </FlatDetails>
         </div>
       </div>
     )
@@ -83,5 +84,14 @@ export const flatFragment = graphql`
         src
       }
     }
+  }
+  fragment Markdown on MarkdownRemark {
+    timeToRead
+    frontmatter {
+      directoryName
+      name
+      address
+    }
+    html
   }
 `

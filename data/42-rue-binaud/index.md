@@ -1,398 +1,105 @@
 ---
-title: "42 Rue Binaud"
-date: "2016-04-15"
-draft: false
-author: Jay Gatsby
+directoryName: '42-rue-binaud'
+name: 'La Maison'
+address: '42 rue Binaud'
+airbnb: 'https://www.airbnb.fr/rooms/6747273'
 tags:
   - remark
-  - Kitchen Sink
-  - Images
 ---
 
-![](joshua-earle-234740.jpg) _Photo by
-[Joshua Earle](https://unsplash.com/@joshuaearle) via
-[Unsplash](https://unsplash.com/@joshuaearle?photo=-87JyMb9ZfU)_
+**Maison Entière**
 
-**_Note how all headlines below show an anchor link when you hover them?_**\
-That's [gatsby-remark-autolink-headers][5] hooking up all `MarkdownRemark` headers
-with anchor links for us.
+## La Maison
 
-## Markdown in Gatsby
+En plein coeur des Chartrons au calme à 10 m à pied des quais et du centre , maison spacieuse et agréable ; salon de 45 M2 et sa cuisine toute équipée, une suite parentale, une chambre mansardée et une mezzanine,d'une terrasse privative de 30 M2 équipée d'un salon de jardin.
+Située dans le quartier des Chartrons.
+Charmante maison au calme de 115 M2, qui peut accueillir de 2 à 8 personnes.
+La maison est une dépendance située au fond de notre jardin,la terrasse cloturée sépare les 2 maisons.
 
-Markdown parsing in Gatsby is done with [gatsby-transformer-remark][1], which
-uses the excellent [remark][2] under the hood.\
-Alongside remark we also use [gatsby-remark-smartypants][6], which provides smart
-punctuation through [retext-smartypants][7].
+#### Descriptif :
 
-The examples on this page cover the basic Markdown syntax and are adapted from
-[Markdown Here's Cheatsheet][3] ([CC-BY][4]).
+- Grand salon/salle à manger ensoleillé donnant sur la terrasse (canapé convertible 2 places, table basse, meuble Tv, grand écran plat, table pour manger) ;
+- Cuisine américaine toute équipée : réfrigérateur, four, micro-onde, plaque à induction, lave-vaisselle, grille pain, machine à café, assortiments de vaisselles et de verres.
+- Buanderie avec machine à laver
+- Suite parentale : lit 2 places 160×200, tables de chevet, dressing, salle de bain et douche tout confort.
 
----
+#### Etage :
 
-This is intended as a quick reference and showcase. For more complete info, see
-[John Gruber's original spec](http://daringfireball.net/projects/markdown/) and
-the
-[GitHub-flavored Markdown info page](http://github.github.com/github-flavored-markdown/).
+- Chambre mansardée : 2 lits d'une place 90x200 modulable pour un lit de 2 personnes, table de chevet, commode ;
+- Mezzanine avec lit 2 places 140x200 qui vue sur le salon (pouvant faire office de salle de jeu , coin détente, bureau...)
+- Salle d'eau + toilette.
 
-##### Table of Contents
+- Linge de maison : nous vous fournissons les draps et les serviettes de toilette GRATUITEMENT !
+- Sur demande lit parapluie combiné et chaise haute.
+- Le logement est équipé de la climatisation.
 
-[Headers](#headers) [Emphasis](#emphasis) [Lists](#lists) [Links](#links)
-[Images](#images) [Tables](#tables) [Footnotes](#footnotes)
-[Blockquotes](#blockquotes) [Inline HTML](#html) [Horizontal Rule](#hr)
-[Line Breaks](#lines)
+#### Échanges avec les voyageurs
 
-<a name="headers"></a>
+N'hésitez pas à me contacter pour toute information complémentaire ou autre, je répondrai présent dans la mesure du possible.
 
-## Headers
+#### Autres remarques
 
-```no-highlight
-# H1
-## H2
-### H3
-#### H4
-##### H5
-###### H6
+Des dépliants sont à votre disposition pour des idées de circuits touristiques, Wine Tour, des bons plans aux alentours, des musées, des zoos, des plages, parc aquatique.....
+Une machine à café tassimo est mise à votre disposition. Pensez à emporter des capsules si vous le désirez.
 
-Alternatively, for H1 and H2, an underline-ish style:
+### Équipements
 
-Alt-H1
-======
+- Climatisation
+- Wi-Fi
+- Accès permanent dans le logement
+- Espace de travail pour ordinateur portable ( Une table ou un bureau pouvant accueillir un ordinateur portable, et une chaise pour travailler )
+- Télévision
+- Équipements de base
+- Serviettes, draps, savon et papier toilette
+- Lave-linge
+- Dans l'immeuble, gratuit ou payant
+- Fer à repasser
+- Chauffage ( Chauffage central ou radiateur électrique )
+- Connexion Ethernet
+- Eau chaude
 
-Alt-H2
-------
-```
+##### Équipements pour les familles
 
-# H1
+- Livres et jouets pour enfants
+- Lit pour bébé
+- Chaise haute
+- Lit parapluie
 
-## H2
+##### Installations :
 
-### H3
+- Parking gratuit dans la rue
 
-#### H4
+##### Restauration :
 
-##### H5
+- Cuisine
+- Espace où les voyageurs peuvent cuisiner
+- Cafetière
+- Ustensiles de cuisine de base
+- Casseroles et poêles, huile, sel et poivre
+- Vaisselle et couverts
+- Lave-vaisselle
+- Four à micro-ondes
+- Réfrigérateur
+- Four
 
-###### H6
+##### Logistique :
 
-Alternatively, for H1 and H2, an underline-ish style:
+- Le ménage doit être fait avant le départ
+- Dépôt de bagages autorisé ( Pour le confort des voyageurs en cas d'arrivée anticipée ou de départ tardif )
+- Séjours longue durée autorisés ( Séjours de 28 jours ou plus autorisés )
 
-# Alt-H1
+##### Chambre et salle de bain
 
-## Alt-H2
+- Sèche-cheveux
+- Cintres
+- Draps
 
-<a name="emphasis"></a>
+##### Dispositif de sécurité
 
-## Emphasis
+- Détecteur de monoxyde de carbone
+- Détecteur de fumée
 
-```no-highlight
-Emphasis, aka italics, with *asterisks* or _underscores_.
+#### Non inclus :
 
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
-
-Combined emphasis with **asterisks and _underscores_**.
-
-Strikethrough uses two tildes. ~~Scratch this.~~
-```
-
-Emphasis, aka italics, with _asterisks_ or _underscores_.
-
-Strong emphasis, aka bold, with **asterisks** or **underscores**.
-
-Combined emphasis with **asterisks and _underscores_**.
-
-Strikethrough uses two tildes. ~~Scratch this.~~
-
-<a name="lists"></a>
-
-## Lists
-
-In this example, leading and trailing spaces are shown with with dots: ⋅
-
-```no-highlight
-1. First ordered list item
-2. Another item
-⋅⋅⋅⋅* Unordered sub-list.
-1. Actual numbers don't matter, just that it's a number
-⋅⋅⋅⋅1. Ordered sub-list
-4. And another item.
-
-⋅⋅⋅You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we'll use three here to also align the raw Markdown).
-
-⋅⋅⋅To have a line break without a paragraph, you will need to use two trailing spaces.⋅⋅
-⋅⋅⋅Note that this line is separate, but within the same paragraph.⋅⋅
-
-* Unordered list can use asterisks
-- Or minuses
-+ Or pluses
-```
-
-1.  First ordered list item
-2.  Another item
-    - Unordered sub-list.
-3.  Actual numbers don't matter, just that it's a number
-    1.  Ordered sub-list
-4.  And another item.
-
-You can have properly indented paragraphs within list items. Notice the blank
-line above, and the leading spaces (at least one, but we'll use three here to
-also align the raw Markdown).
-
-To have a line break without a paragraph, you will need to use two trailing
-spaces.\
- Note that this line is separate, but within the same paragraph.
-
-- Unordered list can use asterisks
-
-* Or minuses
-
-- Or pluses
-
-<a name="links"></a>
-
-## Links
-
-There are two ways to create links.
-
-```no-highlight
-[I'm an inline-style link](https://www.google.com)
-
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-
-[I'm a reference-style link][Arbitrary case-insensitive reference text]
-
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
-
-[You can use numbers for reference-style link definitions][1]
-
-Or leave it empty and use the [link text itself].
-
-URLs and URLs in angle brackets will automatically get turned into links.
-http://www.example.com or <http://www.example.com> and sometimes
-example.com (but not on GitHub, for example).
-
-Some text to show that the reference links can follow later.
-
-[arbitrary case-insensitive reference text]: https://www.mozilla.org
-[1]: http://slashdot.org
-[link text itself]: http://www.reddit.com
-```
-
-[I'm an inline-style link](https://www.google.com)
-
-[I'm an inline-style link with title](https://www.google.com "Google's Homepage")
-
-[I'm a reference-style link][arbitrary case-insensitive reference text]
-
-[I'm a relative reference to a repository file](../blob/master/LICENSE)
-
-[You can use numbers for reference-style link definitions][1]
-
-Or leave it empty and use the [link text itself].
-
-URLs and URLs in angle brackets will automatically get turned into links.
-http://www.example.com or <http://www.example.com> and sometimes example.com
-(but not on GitHub, for example).
-
-Some text to show that the reference links can follow later.
-
-[arbitrary case-insensitive reference text]: https://www.mozilla.org
-[1]: http://slashdot.org
-[link text itself]: http://www.reddit.com
-
-<a name="images"></a>
-
-## Images
-
-```no-highlight
-Here's our logo (hover to see the title text):
-
-Inline-style:
-![alt text](https://pbs.twimg.com/profile_images/875556871427375106/Xuq8DypK_bigger.jpg "Logo Title Text 1")
-
-Reference-style:
-![alt text][logo]
-
-[logo]: https://pbs.twimg.com/profile_images/875556871427375106/Xuq8DypK_bigger.jpg "Logo Title Text 2"
-```
-
-Here's our logo (hover to see the title text):
-
-Inline-style:
-![alt text](https://pbs.twimg.com/profile_images/875556871427375106/Xuq8DypK_bigger.jpg "Logo Title Text 1")
-
-Reference-style: ![alt text][logo]
-
-[logo]: https://pbs.twimg.com/profile_images/875556871427375106/Xuq8DypK_bigger.jpg "Logo Title Text 2"
-
-<a name="tables"></a>
-
-## Tables
-
-Tables aren't part of the core Markdown spec, but they are part of our
-implementation. They are an easy way of adding tables to your email -- a task
-that would otherwise require copy-pasting from another application.
-
-```no-highlight
-Colons can be used to align columns.
-
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
-
-There must be at least 3 dashes separating each header cell.
-The outer pipes (|) are optional, and you don't need to make the
-raw Markdown line up prettily. You can also use inline Markdown.
-
-Markdown | Less | Pretty
---- | --- | ---
-*Still* | `renders` | **nicely**
-1 | 2 | 3
-```
-
-Colons can be used to align columns.
-
-| Tables        |      Are      |  Cool |
-| ------------- | :-----------: | ----: |
-| col 3 is      | right-aligned | $1600 |
-| col 2 is      |   centered    |   $12 |
-| zebra stripes |   are neat    |    $1 |
-
-There must be at least 3 dashes separating each header cell. The outer pipes (|)
-are optional, and you don't need to make the raw Markdown line up prettily. You
-can also use inline Markdown.
-
-| Markdown | Less      | Pretty     |
-| -------- | --------- | ---------- |
-| _Still_  | `renders` | **nicely** |
-| 1        | 2         | 3          |
-
-<a name="footnotes"></a>
-
-## Footnotes
-
-Footnotes are also not a core feature of markdown, but they're a common
-extension feature. The footnote syntax looks like this:
-
-```markdown
-This line has a footnote [^1]. Scroll down or click the link to see it.
-```
-
-That renders like this:
-
-This line has a footnote [^1]. Scroll down or click the link to see it.
-
-<a name="blockquotes"></a>
-
-## Blockquotes
-
-```no-highlight
-> Blockquotes are very handy in email to emulate reply text.
-> This line is part of the same quote.
-
-Quote break.
-
-> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
-```
-
-> Blockquotes are very handy in email to emulate reply text. This line is part
-> of the same quote.
-
-Quote break.
-
-> This is a very long line that will still be quoted properly when it wraps. Oh
-> boy let's keep writing to make sure this is long enough to actually wrap for
-> everyone. Oh, you can _put_ **Markdown** into a blockquote.
-
-<a name="html"></a>
-
-## Inline HTML
-
-You can also use raw HTML in your Markdown, and it'll mostly work pretty well.
-
-```html
-<dl>
-  <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
-
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
-```
-
-<dl>
-  <dt>Definition list</dt>
-  <dd>Is something people use sometimes.</dd>
-
-  <dt>Markdown in HTML</dt>
-  <dd>Does *not* work **very** well. Use HTML <em>tags</em>.</dd>
-</dl>
-
-<a name="hr"></a>
-
-## Horizontal Rule
-
-```
-Three or more...
-
----
-
-Hyphens
-
-***
-
-Asterisks
-
-___
-
-Underscores
-```
-
-Three or more...
-
----
-
-Hyphens
-
----
-
-Asterisks
-
----
-
-Underscores
-
-<a name="lines"></a>
-
-## Line Breaks
-
-Here are some things to try out:
-
-```
-Here's a line for us to start with.
-
-This line is separated from the one above by two newlines, so it will be a *separate paragraph*.
-
-This line is also a separate paragraph, but...
-This line is only separated by a single newline, so it's a separate line in the *same paragraph*.
-```
-
-Here's a line for us to start with.
-
-This line is separated from the one above by two newlines, so it will be a
-_separate paragraph_.
-
-This line is also begins a separate paragraph, but...\
-This line is only separated by a single newline, so it's a separate line in the _same
-paragraph_.
-
-[^1]: The footnote appears at the bottom of the page
-
-[1]: https://www.gatsbyjs.org/packages/gatsby-transformer-remark/
-[2]: http://remark.js.org/
-[3]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
-[4]: https://creativecommons.org/licenses/by/3.0/
-[5]: https://www.gatsbyjs.org/packages/gatsby-remark-autolink-headers/
-[6]: https://www.gatsbyjs.org/packages/gatsby-remark-smartypants/
-[7]: https://github.com/wooorm/retext-smartypants
+- Shampooing
+- Entrée privée
