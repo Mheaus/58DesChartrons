@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import { Contact, FlatDetails, Overlay } from '../index'
+import { Contact, Overlay } from '../index'
 
 class Flat extends PureComponent {
   constructor(props) {

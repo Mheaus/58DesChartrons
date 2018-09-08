@@ -23,8 +23,6 @@ export default class RoomList extends PureComponent {
 
     const openRoomName = Object.keys(props.rooms)[0]
 
-    console.log(openRoomName)
-
     this.state = {
       openRoomName,
     }
@@ -84,14 +82,12 @@ export default class RoomList extends PureComponent {
 
 RoomList.defaultProps = {
   className: '',
-  isAnyRoomOpen: false,
   onImageClick: null,
   rooms: [],
 }
 
 RoomList.propTypes = {
   className: PropTypes.string,
-  isAnyRoomOpen: PropTypes.bool,
   onImageClick: PropTypes.func,
   rooms: PropTypes.arrayOf(PropTypes.shape({})),
 }
