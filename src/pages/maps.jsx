@@ -6,7 +6,7 @@ import {
   GoogleMap,
   Marker,
 } from 'react-google-maps'
-import Contact from '../components'
+import { Contact } from '../components'
 
 const MapsPage = () => (
   <Map
