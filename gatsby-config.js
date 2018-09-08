@@ -6,6 +6,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-styled-components',
     /*
      * Gatsby's data processing layer begins with “source”
      * plugins.  You can source data nodes from anywhere but
