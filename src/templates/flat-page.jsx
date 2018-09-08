@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { Flat } from '../components'
+import { graphql } from 'gatsby'
+import { Flat, Layout } from '../components'
 
 class FlatTemplate extends Component {
   createRoomsFromData = data => {
@@ -28,12 +29,14 @@ class FlatTemplate extends Component {
     const markdownData = data.allMarkdownRemark.edges[0].node
 
     return (
-      <Flat
-        flat={{ ...data.flatsJson, content: markdownData.html }}
-        flatImages={flatImages}
-        frontMatter={markdownData.frontmatter}
-        rooms={this.createRoomsFromData(flatImages)}
-      />
+      <Layout>
+        <Flat
+          flat={{ ...data.flatsJson, content: markdownData.html }}
+          flatImages={flatImages}
+          frontMatter={markdownData.frontmatter}
+          rooms={this.createRoomsFromData(flatImages)}
+        />
+      </Layout>
     )
   }
 }
@@ -60,7 +63,6 @@ FlatTemplate.propTypes = {
 //
 // All GraphQL queries in Gatsby are run at build-time and
 // loaded as plain JSON files so have minimal client cost.
-// eslint-disable-next-line
 export const pageQuery = graphql`
   query FlatQuery(
     $id: String!

@@ -6,16 +6,18 @@ import {
   GoogleMap,
   Marker,
 } from 'react-google-maps'
-import { Contact } from '../components'
+import { Contact, Layout } from '../components'
 
 const MapsPage = () => (
-  <Map
-    isMarkerShown
-    googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkDYVJsOErVmqnERqRi1XcFoMWWyC1gt0&v=3.exp&libraries=geometry,drawing,places"
-    loadingElement={<div style={{ height: `100%` }} />}
-    containerElement={<div style={{ height: `100%` }} />}
-    mapElement={<div style={{ height: `100%` }} />}
-  />
+  <Layout>
+    <Map
+      isMarkerShown
+      googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkDYVJsOErVmqnERqRi1XcFoMWWyC1gt0&v=3.exp&libraries=geometry,drawing,places"
+      loadingElement={<div style={{ height: `100%` }} />}
+      containerElement={<div style={{ height: `100%` }} />}
+      mapElement={<div style={{ height: `100%` }} />}
+    />
+  </Layout>
 )
 
 const CardContact = styled.div`

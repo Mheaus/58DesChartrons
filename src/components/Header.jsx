@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { navigate } from 'gatsby'
 
 const Header = ({ className, titles }) => (
   <header className={`header ${className}`}>
@@ -8,7 +9,7 @@ const Header = ({ className, titles }) => (
       {titles.map(title => (
         <button
           key={title.name}
-          onClick={() => window.___history.push(`/${title.url}`)}
+          onClick={() => navigate(`/${title.url}`)}
           type="button"
         >
           <h1

@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 
 import { Contact, RoomList, FlatDetails } from '../index'
 import FlatDetailsImage from './FlatDetailsImage'
@@ -59,7 +60,6 @@ Flat.propTypes = {
   rooms: PropTypes.arrayOf(PropTypes.shape({})),
 }
 
-// eslint-disable-next-line
 export const flatFragment = graphql`
   fragment Flat_details on FlatsJson {
     id

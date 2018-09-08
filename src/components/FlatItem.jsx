@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { navigate } from 'gatsby'
 
 class FlatItem extends PureComponent {
   formatId = id => (id < 10 ? `0${id}` : id)
@@ -12,11 +13,11 @@ class FlatItem extends PureComponent {
     return (
       <div
         className={`flat-item ${className}`}
-        onClick={() => window.___history.push(`/flats/${flat.id}`)}
+        onClick={() => navigate(`/flats/${flat.id}`)}
         onMouseOver={onItemHover}
         onFocus={onItemHover}
-        onKeyPress={() => window.___history.push(`/flats/${flat.id}`)}
-        role="button"
+        onKeyUp={() => navigate(`/flats/${flat.id}`)}
+        role="link"
         tabIndex="0"
       >
         <span className="flat-item__id">{this.formatId(id)}</span>

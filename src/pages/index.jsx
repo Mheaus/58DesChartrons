@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { graphql } from 'gatsby'
 
-import { FlatItem, FlatHighlight, Contact } from '../components'
+import { Contact, FlatItem, FlatHighlight, Layout } from '../components'
 
 class IndexPage extends Component {
   constructor(props) {
@@ -35,12 +36,12 @@ class IndexPage extends Component {
   }
 
   render() {
-    const { data, className } = this.props
+    const { className, data } = this.props
     const flats = data.allFlatsJson.edges
     const { selectedFlat } = this.state
 
     return (
-      <div className={`index ${className}`}>
+      <Layout className={`index ${className}`}>
         <div className="index__side index__side--left">
           <FlatHighlight flat={selectedFlat} />
         </div>
@@ -54,7 +55,7 @@ class IndexPage extends Component {
             />
           ))}
         </section>
-      </div>
+      </Layout>
     )
   }
 }
@@ -95,7 +96,6 @@ IndexPage.propTypes = {
 //
 // All GraphQL queries in Gatsby are run at build-time and
 // loaded as plain JSON files so have minimal client cost.
-// eslint-disable-next-line
 export const indexPageQuery = graphql`
   query FlatsQuery($directoryName: String) {
     # Select the flat which equals this id.

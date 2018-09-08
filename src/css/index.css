@@ -139,7 +139,7 @@ html [type=button] {
 button:focus,
 html [type=button]:focus {
   outline: none;
-  
+
 }
 [type=button]::-moz-focus-inner,
 [type=reset]::-moz-focus-inner,
@@ -631,7 +631,8 @@ pre tt:after {
   content: "";
 }
 
-#___gatsby {
+#___gatsby,
+#___gatsby>div {
   height: 100%;
 }
 
