@@ -50,11 +50,14 @@ export default styled(RoomList)`
     display: grid;
     grid-auto-flow: dense;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 0.5rem;
+    grid-gap: 0.75rem;
     .images__item {
       height: 5.75rem;
       overflow: hidden;
+      position: relative;
       img {
+        top: -33%;
+        position: absolute;
       }
     }
   }

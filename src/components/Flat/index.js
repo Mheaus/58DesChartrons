@@ -1,5 +1,5 @@
 import Flat from './StyledFlat'
 import FlatDetails from './FlatDetails'
-import FlatDetailsImage from './FlatDetailsImage'
+import Overlay from './Overlay'
 
-export { Flat as default, FlatDetails, FlatDetailsImage }
+export { Flat as default, FlatDetails, Overlay }

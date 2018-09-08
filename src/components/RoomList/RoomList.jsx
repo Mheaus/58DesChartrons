@@ -20,19 +20,19 @@ const Angle = props => (
 export default class RoomList extends PureComponent {
   constructor(props) {
     super(props)
+
+    const openRoomName = Object.keys(props.rooms)[0]
+
+    console.log(openRoomName)
+
     this.state = {
-      openRoomName: null,
+      openRoomName,
     }
   }
 
   toggleOpen = roomName => {
-    const { isAnyRoomOpen } = this.props
     const { openRoomName } = this.state
 
-    if (isAnyRoomOpen) {
-      console.log(openRoomName === null || openRoomName !== roomName)
-      isAnyRoomOpen(openRoomName === null || openRoomName !== roomName)
-    }
     if (openRoomName === roomName) {
       return this.setState({ openRoomName: null })
     }
@@ -43,8 +43,6 @@ export default class RoomList extends PureComponent {
   render() {
     const { className, onImageClick, rooms } = this.props
     const { openRoomName } = this.state
-
-    console.log(rooms)
 
     return (
       <div className={`room-list ${className}`}>

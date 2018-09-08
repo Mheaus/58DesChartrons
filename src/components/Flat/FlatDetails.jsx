@@ -9,7 +9,7 @@ const FlatDetails = ({ className, children }) => (
 export default styled(FlatDetails)`
   background: #fff;
   border-radius: 4px;
-  padding: 4rem 2rem;
+  padding: 2rem;
   ul {
     list-style: none;
   }

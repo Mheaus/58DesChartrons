@@ -1,5 +1,5 @@
 import Contact from './Contact'
-import Flat, { FlatDetails } from './Flat'
+import Flat, { FlatDetails, Overlay } from './Flat'
 import FlatHighlight from './FlatHighlight'
 import FlatItem from './FlatItem'
 import Header from './Header'
@@ -14,5 +14,6 @@ export {
   FlatItem,
   Header,
   Layout,
+  Overlay,
   RoomList,
 }

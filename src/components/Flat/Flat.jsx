@@ -2,50 +2,66 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import { Contact, RoomList, FlatDetails } from '../index'
-import FlatDetailsImage from './FlatDetailsImage'
+import { Contact, FlatDetails, Overlay } from '../index'
 
 class Flat extends PureComponent {
   constructor(props) {
     super(props)
-
-    const { flat } = this.props
-    const background = flat.cover.childImageSharp.original.src
-
     this.state = {
-      background,
-      isImageVisible: false,
+      isOverlayVisible: false,
     }
   }
 
   render() {
     const { className, flat, rooms } = this.props
-    const { background, isImageVisible } = this.state
+    const { isOverlayVisible } = this.state
+    const defaultImageUrl = flat.cover.childImageSharp.original.src
 
     return (
-      <div className={`flat ${className}`}>
+      <div
+        className={`flat ${className}${
+          isOverlayVisible ? ' flat--covered' : ''
+        }`}
+      >
         <div
           className="flat__background"
-          style={{ backgroundImage: `url(${background})` }}
+          style={{ backgroundImage: `url(${defaultImageUrl})` }}
         />
-        <div className="col col--right">
-          <RoomList
-            rooms={rooms}
-            onImageClick={image => this.setState({ background: image })}
-            isAnyRoomOpen={bool => this.setState({ isImageVisible: bool })}
-          />
-          <Contact />
-        </div>
-        <div className="col col--left">
-          <FlatDetailsImage isVisible={isImageVisible} imageUrl={background} />
-          <FlatDetails className="flat__info">
-            <div dangerouslySetInnerHTML={{ __html: flat.content }} />
-          </FlatDetails>
+        <button
+          className="button-open"
+          type="button"
+          onClick={() => this.setState({ isOverlayVisible: true })}
+        >
+          voir les photos
+        </button>
+        <Overlay
+          className={`flat__overlay ${
+            isOverlayVisible ? 'overlay--visible' : ''
+          }`}
+          defaultImageUrl={defaultImageUrl}
+          onClose={() =>
+            this.setState(prevState => ({
+              isOverlayVisible: !prevState.isOverlayVisible,
+            }))
+          }
+          rooms={rooms}
+        />
+        <div className="flat__main-content">
+          <div className="flat__main-content__col col col--right">
+            <Contact />
+          </div>
+          <div className="col col--left">
+            <div
+              className="flat__info"
+              dangerouslySetInnerHTML={{ __html: flat.content }}
+            />
+          </div>
         </div>
       </div>
     )
   }
 }
+
 export default Flat
 
 Flat.defaultProps = {
