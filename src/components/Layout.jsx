@@ -45,7 +45,7 @@ export default styled(Layout)`
     height: 100%;
 
     .app-wrapper {
-      height: calc(100% - 4.65rem);
+      height: calc(100% - 5rem);
     }
   }
 `

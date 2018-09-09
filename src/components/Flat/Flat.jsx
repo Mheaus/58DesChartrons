@@ -1,26 +1,57 @@
 import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import Rehipe from 'rehype-react'
 
-import { Amenities, Contact, Overlay } from '../index'
+import { AmenitiesExcerpt, Contact, Overlay } from '../index'
+import { Close } from '../../assets/icons'
+
+const renderAst = new Rehipe({
+  createElement: React.createElement,
+}).Compiler
 
 class Flat extends PureComponent {
   constructor(props) {
     super(props)
     this.state = {
+      isAmenitiesVisible: false,
+      isBannerVisible: true,
       isOverlayVisible: false,
     }
   }
 
+  componentDidMount() {
+    document.querySelector('.flat').onscroll = event => {
+      const { isBannerVisible } = this.state
+
+      if (event.target.scrollTop > 640 && isBannerVisible) {
+        return this.setState({ isBannerVisible: false })
+      }
+
+      if (event.target.scrollTop < 640 && !isBannerVisible) {
+        return this.setState({ isBannerVisible: true })
+      }
+
+      return null
+    }
+  }
+
+  toggleAnemities = () =>
+    this.setState(prevState => ({
+      isAmenitiesVisible: !prevState.isAmenitiesVisible,
+    }))
+
   render() {
     const { amenities, className, flat, rooms } = this.props
-    const { isOverlayVisible } = this.state
+    const { isAmenitiesVisible, isOverlayVisible, isBannerVisible } = this.state
     const defaultImageUrl = flat.cover.childImageSharp.original.src
 
     return (
       <div
         className={`flat ${className}${
           isOverlayVisible ? ' flat--covered' : ''
+        }${isBannerVisible ? ' flat--banner-visible' : ''}${
+          isAmenitiesVisible ? ' flat--locked' : ''
         }`}
       >
         <div
@@ -47,17 +78,45 @@ class Flat extends PureComponent {
           rooms={rooms}
         />
         <div className="flat__main-content">
-          <div className="flat__main-content__col col col--right">
-            <Contact />
-            {amenities && (
-              <Amenities className="flat__amenities" {...amenities} />
-            )}
-          </div>
-          <div className="col col--left">
-            <div
-              className="flat__info"
-              dangerouslySetInnerHTML={{ __html: flat.content }}
-            />
+          <div className="flat__main-content__container">
+            <div className="flat__main-content__col col col--right">
+              <Contact />
+              {amenities && (
+                <AmenitiesExcerpt
+                  className="flat__amenities-preview"
+                  {...amenities}
+                  onClick={this.toggleAnemities}
+                />
+              )}
+            </div>
+            <div className="col col--left">
+              <div
+                className={`flat__amenities${
+                  isAmenitiesVisible ? ' flat__amenities--visible' : ''
+                }`}
+              >
+                <h3 className="flat__amenities__title">
+                  Équipements
+                  <button
+                    className="flat__amenities__icon-container"
+                    onClick={this.toggleAnemities}
+                    type="button"
+                  >
+                    <Close
+                      className="flat__amenities__icon-close"
+                      fill="var(--font-color)"
+                    />
+                  </button>
+                </h3>
+                {amenities && renderAst(amenities.htmlAst)}
+              </div>
+              <div
+                className={`flat__info${
+                  isAmenitiesVisible ? ' flat__info--hidden' : ''
+                }`}
+                dangerouslySetInnerHTML={{ __html: flat.content }}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -71,14 +130,14 @@ Flat.defaultProps = {
   amenities: null,
   className: '',
   flat: {},
-  rooms: [],
+  rooms: {},
 }
 
 Flat.propTypes = {
   amenities: PropTypes.shape({}),
   className: PropTypes.string,
   flat: PropTypes.shape({}),
-  rooms: PropTypes.arrayOf(PropTypes.shape({})),
+  rooms: PropTypes.shape({}),
 }
 
 export const flatFragment = graphql`
@@ -107,7 +166,7 @@ export const flatFragment = graphql`
     }
   }
   fragment Markdown on MarkdownRemark {
-    timeToRead
+    excerpt
     frontmatter {
       directoryName
       name

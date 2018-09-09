@@ -63,7 +63,7 @@ export default class RoomList extends PureComponent {
               {images.map((image, index) => (
                 <div
                   className={`images__item images__item${index + 1}`}
-                  key={roomName}
+                  key={`${roomName}${image}`}
                   onClick={() => onImageClick(image)}
                   onKeyPress={() => onImageClick(image)}
                   role="button"
@@ -83,11 +83,11 @@ export default class RoomList extends PureComponent {
 RoomList.defaultProps = {
   className: '',
   onImageClick: null,
-  rooms: [],
+  rooms: {},
 }
 
 RoomList.propTypes = {
   className: PropTypes.string,
   onImageClick: PropTypes.func,
-  rooms: PropTypes.arrayOf(PropTypes.shape({})),
+  rooms: PropTypes.shape({}),
 }

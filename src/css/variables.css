@@ -1,3 +1,5 @@
 :root {
   --color-primary: #FF565C;
+  --color-secondary: rgb(227, 151, 51);
+  --font-color: hsla(0, 0%, 0%, 0.8);
 }

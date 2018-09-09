@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import Close from '../assets/icons'
+import { Close } from '../assets/icons'
 import RoomList from './RoomList'
 
 class Overlay extends PureComponent {
@@ -26,7 +26,11 @@ class Overlay extends PureComponent {
           <img src={imageUrl} alt="flat" className="overlay__image" />
         </div>
         <div className="overlay__aside-right">
-          <Close className="overlay__aside-right__close" onClick={onClose} />
+          <Close
+            className="overlay__aside-right__close"
+            onClick={onClose}
+            fill="white"
+          />
           <RoomList
             rooms={rooms}
             onImageClick={newImageUrl =>
@@ -97,12 +101,12 @@ Overlay.defaultProps = {
   className: '',
   defaultImageUrl: '',
   onClose: () => null,
-  rooms: [],
+  rooms: {},
 }
 
 Overlay.propTypes = {
-  className: '',
+  className: PropTypes.string,
   defaultImageUrl: PropTypes.string,
   onClose: PropTypes.func,
-  rooms: PropTypes.arrayOf(PropTypes.shape({})),
+  rooms: PropTypes.shape({}),
 }

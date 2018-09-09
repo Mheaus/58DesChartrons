@@ -8,8 +8,6 @@ tags:
   - amenities
 ---
 
-### Équipements :
-
 - Climatisation
 - Wi-Fi ( Accès permanent dans le logement )
 - Espace de travail pour ordinateur portable ( Une table ou un bureau pouvant accueillir un ordinateur portable, et une chaise pour travailler )
@@ -20,19 +18,19 @@ tags:
 - Chauffage ( Chauffage central ou radiateur électrique )
 - Eau chaude
 
-##### Équipements pour les familles
+#### Équipements pour les familles
 
 - Livres et jouets pour enfants
 - Lit pour bébé
 - Chaise haute
 - Lit parapluie
 
-##### Installations :
+#### Installations :
 
 - Parking gratuit dans la rue
 - Parking payant à l'extérieur
 
-##### Restauration :
+#### Restauration :
 
 - Cuisine ( Espace où les voyageurs peuvent cuisiner )
 - Cafetière
@@ -45,22 +43,22 @@ tags:
 - Four
 - Cuisinière
 
-##### Accès des voyageurs :
+#### Accès des voyageurs :
 
 - Clés remises par l'hôte
 
-##### Logistique :
+#### Logistique :
 
 - Dépôt de bagages autorisé ( Pour le confort des voyageurs en cas d'arrivée anticipée ou de départ tardif )
 - Séjours longue durée autorisés ( Séjours de 28 jours ou plus autorisés )
 
-##### Chambre et salle de bain
+#### Chambre et salle de bain
 
 - Sèche-cheveux
 - Cintres
 - Draps
 
-##### Dispositif de sécurité
+#### Dispositif de sécurité
 
 - Détecteur de fumée
 - kit de premier secours

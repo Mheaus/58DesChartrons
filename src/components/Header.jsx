@@ -62,5 +62,5 @@ Header.defaultProps = {
 
 Header.propTypes = {
   className: PropTypes.string,
-  titles: PropTypes.arrayOf(PropTypes.string),
+  titles: PropTypes.arrayOf(PropTypes.shape({})),
 }

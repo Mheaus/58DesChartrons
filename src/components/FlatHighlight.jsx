@@ -66,14 +66,14 @@ export default styled(FlatHighlight)`
 
 FlatHighlight.defaultProps = {
   className: '',
-  flat: {},
+  image: {},
+  description: '',
+  name: '',
 }
 
 FlatHighlight.propTypes = {
   className: PropTypes.string,
-  flat: PropTypes.shape({
-    cover: PropTypes.string,
-    name: PropTypes.string,
-    description: PropTypes.string,
-  }),
+  image: PropTypes.shape({}),
+  name: PropTypes.string,
+  description: PropTypes.string,
 }

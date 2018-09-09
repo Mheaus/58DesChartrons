@@ -1,4 +1,4 @@
-import Amenities from './Amenities'
+import AmenitiesExcerpt from './AmenitiesExcerpt'
 import Contact from './Contact'
 import Flat from './Flat'
 import FlatHighlight from './FlatHighlight'
@@ -9,7 +9,7 @@ import Overlay from './Overlay'
 import RoomList from './RoomList'
 
 export {
-  Amenities,
+  AmenitiesExcerpt,
   Contact,
   Flat,
   FlatHighlight,

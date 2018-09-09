@@ -1,14 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 14 14">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="14" viewBox="0 0 14 14">
   <defs>
-    <path id="a" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
-    <path id="c" d="M0 0h50v50H0z"/>
+    <polygon id="close-a" points="19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12"/>
   </defs>
   <g fill="none" fill-rule="evenodd" transform="translate(-5 -5)">
-    <mask id="b" fill="#fff">
-      <use xlink:href="#a"/>
-    </mask>
-    <g mask="url(#b)">
-      <use fill="#000" xlink:href="#c" transform="translate(-13 -13)"/>
-    </g>
+    <use fill="#000" xlink:href="#close-a"/>
   </g>
 </svg>
