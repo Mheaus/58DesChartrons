@@ -16,7 +16,7 @@ class IndexPage extends Component {
         name: '4 Locations près du centre et des quais de Bordeaux',
         description:
           "Facile d'accès, situé dans le quartier des Chartrons. Idéal pour les familles.",
-        cover: data.defaultCover.childImageSharp.original.src,
+        image: data.defaultCover.childImageSharp,
       },
     }
   }
@@ -25,12 +25,12 @@ class IndexPage extends Component {
     const { data } = this.props
     const flats = data.allFlatsJson.edges
     const flat = Object.values(flats)[flatId].node
-    const cover = flat.cover.childImageSharp.original.src
+    const image = flat.cover.childImageSharp
 
     return this.setState({
       selectedFlat: {
         ...flat,
-        cover,
+        image,
       },
     })
   }
@@ -43,7 +43,7 @@ class IndexPage extends Component {
     return (
       <Layout className={`index ${className}`}>
         <div className="index__side index__side--left">
-          <FlatHighlight flat={selectedFlat} />
+          <FlatHighlight {...selectedFlat} />
         </div>
         <section className="index__side index__side--right">
           <Contact />
@@ -108,6 +108,9 @@ export const indexPageQuery = graphql`
           description
           cover {
             childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
               original {
                 src
               }
@@ -118,6 +121,9 @@ export const indexPageQuery = graphql`
     }
     defaultCover: file(name: { eq: "living_room3-min" }) {
       childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
         original {
           src
         }

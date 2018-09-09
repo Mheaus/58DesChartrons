@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import { Contact, Overlay } from '../index'
+import { Amenities, Contact, Overlay } from '../index'
 
 class Flat extends PureComponent {
   constructor(props) {
@@ -13,7 +13,7 @@ class Flat extends PureComponent {
   }
 
   render() {
-    const { className, flat, rooms } = this.props
+    const { amenities, className, flat, rooms } = this.props
     const { isOverlayVisible } = this.state
     const defaultImageUrl = flat.cover.childImageSharp.original.src
 
@@ -49,6 +49,9 @@ class Flat extends PureComponent {
         <div className="flat__main-content">
           <div className="flat__main-content__col col col--right">
             <Contact />
+            {amenities && (
+              <Amenities className="flat__amenities" {...amenities} />
+            )}
           </div>
           <div className="col col--left">
             <div
@@ -65,12 +68,14 @@ class Flat extends PureComponent {
 export default Flat
 
 Flat.defaultProps = {
+  amenities: null,
   className: '',
   flat: {},
   rooms: [],
 }
 
 Flat.propTypes = {
+  amenities: PropTypes.shape({}),
   className: PropTypes.string,
   flat: PropTypes.shape({}),
   rooms: PropTypes.arrayOf(PropTypes.shape({})),
@@ -107,7 +112,9 @@ export const flatFragment = graphql`
       directoryName
       name
       address
+      tags
     }
     html
+    htmlAst
   }
 `

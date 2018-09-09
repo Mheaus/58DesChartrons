@@ -2,8 +2,8 @@ import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import Close from '../../assets/icons'
-import RoomList from '../RoomList'
+import Close from '../assets/icons'
+import RoomList from './RoomList'
 
 class Overlay extends PureComponent {
   constructor(props) {

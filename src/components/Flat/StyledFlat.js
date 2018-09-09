@@ -23,6 +23,7 @@ export default styled(Flat)`
     background: white;
     border-radius: 2px;
     color: rgb(56, 56, 60, 0.75);
+    cursor: pointer;
     font-weight: 600;
     opacity: 1;
     padding: 0.75rem 1.5rem;
@@ -43,6 +44,7 @@ export default styled(Flat)`
       visibility: visible;
     }
   }
+
   .flat__main-content {
     background: white;
     display: flex;
@@ -71,6 +73,7 @@ export default styled(Flat)`
       }
     }
   }
+
   .flat__background {
     background-attachment: fixed;
     background-color: #c6c6c6;

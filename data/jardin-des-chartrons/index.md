@@ -5,6 +5,7 @@ address: '58 Cours du Médoc'
 airbnb: 'https://www.airbnb.fr/rooms/25377522'
 tags:
   - remark
+  - description
 ---
 
 **Logement Entier**

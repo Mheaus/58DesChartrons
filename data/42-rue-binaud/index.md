@@ -5,6 +5,7 @@ address: '42 rue Binaud'
 airbnb: 'https://www.airbnb.fr/rooms/6747273'
 tags:
   - remark
+  - description
 ---
 
 **Maison Entière**

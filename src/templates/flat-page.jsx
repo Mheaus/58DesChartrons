@@ -25,16 +25,23 @@ class FlatTemplate extends Component {
 
   render() {
     const { data } = this.props
-    const flatImages = data.allFile.edges.map(({ node }) => node)
-    const markdownData = data.allMarkdownRemark.edges[0].node
+    const images = data.allFile.edges.map(({ node }) => node)
+    const rooms = this.createRoomsFromData(images)
+    const markdownData = data.allMarkdownRemark.edges.map(({ node }) => node)
+    const description = markdownData.find(node =>
+      node.frontmatter.tags.includes('description')
+    )
+    const amenities = markdownData.find(node =>
+      node.frontmatter.tags.includes('amenities')
+    )
 
     return (
       <Layout>
         <Flat
-          flat={{ ...data.flatsJson, content: markdownData.html }}
-          flatImages={flatImages}
+          flat={{ ...data.flatsJson, content: description.html }}
+          amenities={amenities}
           frontMatter={markdownData.frontmatter}
-          rooms={this.createRoomsFromData(flatImages)}
+          rooms={rooms}
         />
       </Layout>
     )
