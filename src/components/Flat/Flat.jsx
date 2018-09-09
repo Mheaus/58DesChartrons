@@ -58,6 +58,7 @@ class Flat extends PureComponent {
           className="flat__background"
           style={{ backgroundImage: `url(${defaultImageUrl})` }}
         />
+
         <button
           className="button-open"
           type="button"
@@ -65,6 +66,7 @@ class Flat extends PureComponent {
         >
           voir les photos
         </button>
+
         <Overlay
           className={`flat__overlay ${
             isOverlayVisible ? 'overlay--visible' : ''
@@ -77,6 +79,7 @@ class Flat extends PureComponent {
           }
           rooms={rooms}
         />
+
         <div className="flat__main-content">
           <div className="flat__main-content__container">
             <div className="flat__main-content__col col col--right">
@@ -89,6 +92,7 @@ class Flat extends PureComponent {
                 />
               )}
             </div>
+
             <div className="col col--left">
               <div
                 className={`flat__amenities${

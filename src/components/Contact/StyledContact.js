@@ -97,6 +97,7 @@ export default styled(Contact)`
     svg {
       height: 1.5rem;
       margin: 0 0.75rem;
+      opacity: 0.85;
       transition: all 0.25s;
     }
     &:hover {
@@ -114,6 +115,7 @@ export default styled(Contact)`
     opacity: 0;
     overflow: hidden;
     position: relative;
+    top: -2px;
     transition: all 0.5s, opacity 0.25s;
     visibility: hidden;
     &.contact__form--open {

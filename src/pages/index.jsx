@@ -108,24 +108,18 @@ export const indexPageQuery = graphql`
           description
           cover {
             childImageSharp {
-              fluid {
+              fluid(quality: 100) {
                 ...GatsbyImageSharpFluid
-              }
-              original {
-                src
               }
             }
           }
         }
       }
     }
-    defaultCover: file(name: { eq: "living_room3-min" }) {
+    defaultCover: file(name: { eq: "default-cover" }) {
       childImageSharp {
-        fluid {
+        fluid(quality: 100) {
           ...GatsbyImageSharpFluid
-        }
-        original {
-          src
         }
       }
     }

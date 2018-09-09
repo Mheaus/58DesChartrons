@@ -47,18 +47,16 @@ export default class Contact extends Component {
           </button>
         </div>
 
-        <div
+        <button
           className={`contact__display-form${
             isFormOpen ? ' contact__display-form--active' : ''
           }`}
           onClick={() => this.toggleForm()}
-          onKeyPress={() => this.toggleForm()}
-          role="button"
-          tabIndex={0}
+          type="button"
         >
           <span>Contacter par mail</span>
           <AngleRight />
-        </div>
+        </button>
 
         <form
           className={`contact__form${isFormOpen ? ' contact__form--open' : ''}`}

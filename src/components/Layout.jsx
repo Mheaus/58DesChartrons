@@ -57,7 +57,10 @@ Layout.defaultProps = {
 }
 
 Layout.propTypes = {
-  children: PropTypes.element,
+  children: PropTypes.oneOfType([
+    PropTypes.element,
+    PropTypes.arrayOf(PropTypes.element),
+  ]),
   className: PropTypes.string,
   data: PropTypes.shape({}),
 }

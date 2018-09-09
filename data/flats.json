@@ -12,7 +12,7 @@
     "name": "Le Palier",
     "surface": 110,
     "description": "Venez découvrir le quartier des Chartrons à 5 min à pied des quais. L'appartement située au 1er étage sans ascenseur a été totalement réhabilité et rénové. L'espace de vie est adaptée aux familles ou groupe d'amis.",
-    "cover": "./terrasse-des-chartrons/images/living_room3-min.jpg",
+    "cover": "./terrasse-des-chartrons/images/living_room3.jpg",
     "directoryName": "terrasse-des-chartrons"
   },
   {
@@ -20,7 +20,7 @@
     "name": "Le Second",
     "surface": 110,
     "description": "Appartement de 110 m2 baignée de lumière avec sa terrasse sur les toits. Située au deuxième étage sans ascenseur d un immeuble entièrement rénové.",
-    "cover": "./58-des-chartrons/images/living_room3-min.jpg",
+    "cover": "./58-des-chartrons/images/living_room3.jpg",
     "directoryName": "58-des-chartrons"
   },
   {
@@ -28,7 +28,7 @@
     "name": "Le Terre-à-Terre",
     "surface": 100,
     "description": "Bienvenue chez vous. Un week-end, des vacances,passez un bon moment de tranquillité dans cette appartement composé de 3 chambres avec sa terrasse/jardin arboré. Située en rez de chaussé, l'appartement a été entièrement réhabilité avec soin.",
-    "cover": "./jardin-des-chartrons/images/living_room2-min.jpg",
+    "cover": "./jardin-des-chartrons/images/living_room2.jpg",
     "directoryName": "jardin-des-chartrons"
   }
 ]

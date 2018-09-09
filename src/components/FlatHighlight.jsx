@@ -5,7 +5,11 @@ import Img from 'gatsby-image'
 
 const FlatHighlight = ({ className, image, description, name }) => (
   <div className={`highlighted-flat ${className}`}>
-    <Img className="highlighted-flat__image" fluid={image.fluid} />
+    <Img
+      className="highlighted-flat__image"
+      fluid={image.fluid}
+      quality={100}
+    />
     <div className="highlighted-flat__titles">
       <h1 className="highlighted-flat__titles__main-title">{name}</h1>
       <p className="highlighted-flat__titles__subtitle">{description}</p>
