@@ -93,7 +93,7 @@ class Flat extends PureComponent {
               )}
             </div>
 
-            <div className="col col--left">
+            <div className="flat__main-content__col col col--left">
               <div
                 className={`flat__amenities${
                   isAmenitiesVisible ? ' flat__amenities--visible' : ''

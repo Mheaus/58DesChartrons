@@ -76,6 +76,7 @@ export default styled(Flat)`
           position: fixed;
           right: 20rem;
           top: 5rem;
+          transition: all 0.5s;
           width: 32rem;
 
           .contact {
@@ -174,5 +175,35 @@ export default styled(Flat)`
     transition: all 0.5s ease;
     width: 100%;
     z-index: -1;
+  }
+
+  @media screen and (max-width: 1216px) {
+    .flat__main-content__container.flat__main-content__container.flat__main-content__container {
+      align-items: center;
+      flex-direction: column-reverse;
+      max-width: 48rem;
+      width: 100%;
+
+      .col--right {
+        position: unset !important;
+        width: calc(100% - 4rem);
+      }
+
+      .col--left.col--left.col--left {
+        margin-right: 0;
+        max-width: 100%;
+      }
+    }
+  }
+  @media screen and (min-width: 1216px) and (max-width: 1900px) {
+    .flat__main-content__container.flat__main-content__container.flat__main-content__container {
+      .col--right {
+        margin: 2rem 0;
+        right: 5% !important;
+      }
+
+      .col--left.col--left.col--left {
+      }
+    }
   }
 `
