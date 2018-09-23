@@ -24,15 +24,19 @@ const CardContact = styled.div`
   background: #fff;
   border-radius: 3px;
   height: 10rem;
+  margin: 0.75rem;
+  max-width: 32rem;
   padding: 1rem 0 0 2rem;
   position: absolute;
-  right: 0.75rem;
-  top: 5.25rem;
-  width: 32rem;
+  right: 0;
+  top: 4.5rem;
+  width: calc(100% - 1.5rem);
+
   .contact__form {
     background: #fff;
     margin-left: -2rem;
     padding: 0 0 1rem 2rem;
+
     &.contact__form--open {
       height: 21rem;
       .contact__form__submit {

@@ -13,15 +13,20 @@ export default styled(Contact)`
     margin: 0 2rem 1rem 0;
     .contact__header__user.user {
       display: flex;
+      width: calc(100% - 10rem);
+
       .user__image {
         margin: 0;
         height: 4rem;
         position: relative;
         width: 4rem;
+
         img {
           border-radius: 50%;
           margin: 0;
           width: 4rem;
+          height: 4rem;
+          max-width: unset;
         }
         svg {
           bottom: 0;
@@ -35,15 +40,22 @@ export default styled(Contact)`
         display: flex;
         flex-direction: column;
         margin: 0.13rem 0.5rem;
+
         .user__info__name {
           font-size: 1.5rem;
           margin: 0;
         }
+
         .user__info__subtitle {
           margin: 0;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          max-width: 75%;
         }
       }
     }
+
     .contact__header__airbnb-button {
       align-items: center;
       background: ${buttonBackground};
@@ -58,8 +70,10 @@ export default styled(Contact)`
       display: flex;
       height: 3rem;
       justify-content: center;
+      min-width: 10rem;
       padding: 0.125rem 2rem;
       transition: all 0.15s;
+
       img {
         height: 2rem;
         filter: brightness(500%);
