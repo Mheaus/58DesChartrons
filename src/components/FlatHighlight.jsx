@@ -27,11 +27,13 @@ export default styled(FlatHighlight)`
   width: 100%;
   z-index: -1;
 
+  .gatsby-image-wrapper,
   .gatsby-image-outer-wrapper {
     height: 100%;
 
     .highlighted-flat__image {
       height: 100%;
+      position: absolute;
       z-index: -1;
     }
   }
@@ -40,6 +42,7 @@ export default styled(FlatHighlight)`
     bottom: 7rem;
     left: 1rem;
     position: absolute;
+    z-index: 2;
 
     .highlighted-flat__titles__main-title {
       font-size: 3.5rem;
@@ -57,9 +60,6 @@ export default styled(FlatHighlight)`
     }
   }
 
-  &.fade {
-  }
-
   &::before {
     background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 1));
     bottom: 0;
@@ -69,7 +69,7 @@ export default styled(FlatHighlight)`
     position: absolute;
     right: 0;
     width: 100%;
-    z-index: 0;
+    z-index: 1;
   }
 
   &::after {
