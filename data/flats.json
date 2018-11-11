@@ -5,7 +5,8 @@
     "surface": 110,
     "description": "Spacieuse et agréable : composé d'un salon de 45m² et de sa cuisine toute équipée, d'une suite parentale, d'une chambre mansardée, d'une mezzanine et d'une terrasse privative de 30m² équipée d'un salon de jardin.",
     "cover": "./42-rue-binaud/images/living_room2.jpg",
-    "directoryName": "42-rue-binaud"
+    "directoryName": "42-rue-binaud",
+    "airbnb": "https://www.airbnb.com/rooms/6747273"
   },
   {
     "id": "2",
