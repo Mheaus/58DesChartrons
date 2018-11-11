@@ -60,8 +60,9 @@ export default class Contact extends Component {
 
         <form
           className={`contact__form${isFormOpen ? ' contact__form--open' : ''}`}
-          action="https://formspree.io/mathieu.adbrt@gmail.com"
           method="POST"
+          data-netlify="true"
+          netlify
         >
           <label className="contact__form__email" htmlFor="_replyto">
             <span>Votre Email :</span>
