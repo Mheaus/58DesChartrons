@@ -178,23 +178,36 @@ export default styled(Flat)`
   }
 
   @media screen and (max-width: 1216px) {
-    .flat__main-content__container.flat__main-content__container.flat__main-content__container {
-      align-items: center;
-      flex-direction: column-reverse;
-      max-width: 48rem;
-      width: 100%;
+    .button-open {
+      right: 1.5rem;
+    }
 
-      .col--right {
-        position: unset !important;
-        width: calc(100% - 4rem);
-      }
+    .flat__main-content {
+      margin-top: 85%;
 
-      .col--left.col--left.col--left {
-        margin-right: 0;
-        max-width: 100%;
+      .flat__main-content__container.flat__main-content__container.flat__main-content__container {
+        align-items: center;
+        flex-direction: column-reverse;
+        max-width: 48rem;
+        width: 100%;
+
+        .col--right {
+          position: unset !important;
+          width: calc(100% - 4rem);
+        }
+
+        .col--left.col--left.col--left {
+          margin-right: 0;
+          max-width: 100%;
+        }
       }
     }
+
+    .flat__background {
+      height: 65%;
+    }
   }
+
   @media screen and (min-width: 1216px) and (max-width: 1900px) {
     .flat__main-content__container.flat__main-content__container.flat__main-content__container {
       .col--right {
