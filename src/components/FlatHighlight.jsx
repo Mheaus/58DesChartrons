@@ -2,25 +2,28 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
+import { CSSTransition } from 'react-transition-group'
 
-const FlatHighlight = ({ className, image, description, name }) => (
-  <div className={`highlighted-flat ${className}`}>
-    <Img
-      className="highlighted-flat__image"
-      fluid={image.fluid}
-      quality={100}
-    />
-    <div className="highlighted-flat__titles">
-      <h1 className="highlighted-flat__titles__main-title">{name}</h1>
-      <p className="highlighted-flat__titles__subtitle">{description}</p>
+const FlatHighlight = ({ visible, className, image, description, name }) => (
+  <CSSTransition appear in={visible} classNames="fade" timeout={300}>
+    <div className={`highlighted-flat fade ${className}`}>
+      <Img
+        className="highlighted-flat__image"
+        fluid={image.fluid}
+        quality={100}
+      />
+      <div className="highlighted-flat__titles">
+        <h1 className="highlighted-flat__titles__main-title">{name}</h1>
+        <p className="highlighted-flat__titles__subtitle">{description}</p>
+      </div>
     </div>
-  </div>
+  </CSSTransition>
 )
 
 export default styled(FlatHighlight)`
   color: #fff;
   height: 100%;
-  position: relative;
+  position: absolute;
   width: 100%;
   z-index: -1;
 
@@ -46,11 +49,15 @@ export default styled(FlatHighlight)`
       margin-bottom: 2rem;
       width: 80%;
     }
+
     .highlighted-flat__titles__subtitle {
       font-size: 1rem;
       font-weight: 300;
       letter-spacing: 0.75px;
     }
+  }
+
+  &.fade {
   }
 
   &::before {
@@ -64,20 +71,23 @@ export default styled(FlatHighlight)`
     width: 100%;
     z-index: 0;
   }
+
   &::after {
   }
 `
 
 FlatHighlight.defaultProps = {
   className: '',
-  image: {},
   description: '',
+  image: {},
   name: '',
+  visible: false,
 }
 
 FlatHighlight.propTypes = {
   className: PropTypes.string,
+  description: PropTypes.string,
   image: PropTypes.shape({}),
   name: PropTypes.string,
-  description: PropTypes.string,
+  visible: PropTypes.bool,
 }

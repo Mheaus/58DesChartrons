@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { graphql } from 'gatsby'
+import { TransitionGroup } from 'react-transition-group'
 
 import { Contact, FlatItem, FlatHighlight, Layout } from '../components'
 
@@ -9,41 +10,40 @@ class IndexPage extends Component {
   constructor(props) {
     super(props)
 
-    const { data } = this.props
-
     this.state = {
-      selectedFlat: {
-        name: '4 Locations près du centre et des quais de Bordeaux',
-        description:
-          "Facile d'accès, situé dans le quartier des Chartrons. Idéal pour les familles.",
-        image: data.defaultCover.childImageSharp,
-      },
+      selectedFlatId: 0,
     }
   }
 
-  changeCurrentFlat = flatId => {
-    const { data } = this.props
-    const flats = data.allFlatsJson.edges
-    const flat = Object.values(flats)[flatId].node
-    const image = flat.cover.childImageSharp
-
-    return this.setState({
-      selectedFlat: {
-        ...flat,
-        image,
-      },
+  changeCurrentFlat = flatId =>
+    this.setState({
+      selectedFlatId: flatId + 1,
     })
-  }
 
   render() {
     const { className, data } = this.props
     const flats = data.allFlatsJson.edges
-    const { selectedFlat } = this.state
+    const { selectedFlatId } = this.state
 
     return (
       <Layout className={`index ${className}`}>
         <div className="index__side index__side--left">
-          <FlatHighlight {...selectedFlat} />
+          <TransitionGroup>
+            <FlatHighlight
+              name="4 Locations près du centre et des quais de Bordeaux"
+              description="Facile d'accès, situé dans le quartier des Chartrons. Idéal pour les familles."
+              image={data.defaultCover.childImageSharp}
+              visible={selectedFlatId === 0 && true}
+            />
+            {data.allFlatsJson.edges.map(({ node }, index) => (
+              <FlatHighlight
+                {...node}
+                image={node.cover.childImageSharp}
+                key={node.id}
+                visible={selectedFlatId === index + 1 && true}
+              />
+            ))}
+          </TransitionGroup>
         </div>
         <section className="index__side index__side--right">
           <Contact />
@@ -69,9 +69,12 @@ export default styled(IndexPage)`
     max-height: 100%;
     overflow-y: scroll;
     width: 50%;
+
     &.index__side--left {
       float: left;
+      position: relative;
     }
+
     &.index__side--right {
       background: #f9fafc;
       float: right;
