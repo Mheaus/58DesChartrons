@@ -60,6 +60,7 @@ export default class Contact extends Component {
 
         <form
           className={`contact__form${isFormOpen ? ' contact__form--open' : ''}`}
+          action="/"
           method="POST"
           data-netlify="true"
           netlify

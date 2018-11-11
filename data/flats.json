@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "name": "La Maison",
+    "name": "La Maison et sa Terrasse",
     "surface": 110,
     "description": "Spacieuse et agréable : composé d'un salon de 45m² et de sa cuisine toute équipée, d'une suite parentale, d'une chambre mansardée, d'une mezzanine et d'une terrasse privative de 30m² équipée d'un salon de jardin.",
     "cover": "./42-rue-binaud/images/living_room2.jpg",
@@ -9,26 +9,29 @@
   },
   {
     "id": "2",
-    "name": "Le Palier",
+    "name": "La Terrasse des Chartrons",
     "surface": 110,
     "description": "Venez découvrir le quartier des Chartrons à 5 min à pied des quais. L'appartement située au 1er étage sans ascenseur a été totalement réhabilité et rénové. L'espace de vie est adaptée aux familles ou groupe d'amis.",
     "cover": "./terrasse-des-chartrons/images/living_room3.jpg",
-    "directoryName": "terrasse-des-chartrons"
+    "directoryName": "terrasse-des-chartrons",
+    "airbnb": "https://www.airbnb.com/rooms/25377823"
   },
   {
     "id": "3",
-    "name": "Le Second",
+    "name": "Le 58 des Chartrons",
     "surface": 110,
     "description": "Appartement de 110 m2 baignée de lumière avec sa terrasse sur les toits. Située au deuxième étage sans ascenseur d un immeuble entièrement rénové.",
     "cover": "./58-des-chartrons/images/living_room3.jpg",
-    "directoryName": "58-des-chartrons"
+    "directoryName": "58-des-chartrons",
+    "airbnb": "https://www.airbnb.fr/rooms/22688426"
   },
   {
     "id": "4",
-    "name": "Le Terre-à-Terre",
+    "name": "Le Jardin des Chartrons",
     "surface": 100,
     "description": "Bienvenue chez vous. Un week-end, des vacances,passez un bon moment de tranquillité dans cette appartement composé de 3 chambres avec sa terrasse/jardin arboré. Située en rez de chaussé, l'appartement a été entièrement réhabilité avec soin.",
     "cover": "./jardin-des-chartrons/images/living_room2.jpg",
-    "directoryName": "jardin-des-chartrons"
+    "directoryName": "jardin-des-chartrons",
+    "airbnb": "https://www.airbnb.com/rooms/25377522"
   }
 ]
