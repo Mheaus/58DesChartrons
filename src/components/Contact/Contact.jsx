@@ -20,13 +20,19 @@ export default class Contact extends Component {
   }
 
   render() {
-    const { className } = this.props
+    const { airbnbLink, className } = this.props
     const { isFormOpen } = this.state
 
     return (
       <div className={`contact ${className}`}>
         <div className="contact__header">
-          <div className="contact__header__user user">
+          <button
+            type="button"
+            className="contact__header__user user"
+            onClick={() =>
+              window.open('https://www.airbnb.fr/users/show/35326501')
+            }
+          >
             <div className="user__image">
               <img src={userPicture} alt="Isabelle" />
               <Medal />
@@ -35,12 +41,10 @@ export default class Contact extends Component {
               <p className="user__info__name">Isabelle</p>
               <p className="user__info__subtitle">SuperHost AirBnb</p>
             </div>
-          </div>
+          </button>
           <button
             className="contact__header__airbnb-button"
-            onClick={() =>
-              window.open('https://www.airbnb.fr/users/show/35326501')
-            }
+            onClick={() => window.open(airbnbLink)}
             type="button"
           >
             <img src={airbnbLogo} alt="logo airbnb" />
@@ -83,9 +87,11 @@ export default class Contact extends Component {
 }
 
 Contact.defaultProps = {
+  airbnbLink: 'https://www.airbnb.fr/users/show/35326501',
   className: '',
 }
 
 Contact.propTypes = {
+  airbnbLink: PropTypes.string,
   className: PropTypes.string,
 }

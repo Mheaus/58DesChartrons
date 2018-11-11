@@ -83,7 +83,7 @@ class Flat extends PureComponent {
         <div className="flat__main-content">
           <div className="flat__main-content__container">
             <div className="flat__main-content__col col col--right">
-              <Contact />
+              <Contact airbnbLink={flat.airbnb} />
               {amenities && (
                 <AmenitiesExcerpt
                   className="flat__amenities-preview"
@@ -147,6 +147,7 @@ Flat.propTypes = {
 export const flatFragment = graphql`
   fragment Flat_details on FlatsJson {
     id
+    airbnb
     name
     description
     cover {
