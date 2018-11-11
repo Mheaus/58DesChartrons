@@ -64,7 +64,7 @@ export default class Contact extends Component {
 
         <form
           className={`contact__form${isFormOpen ? ' contact__form--open' : ''}`}
-          action="https://formspree.io/mathieu.adbrt@gmail.com"
+          action={`https://formspree.io/${process.env.OWNER_EMAIL}`}
           method="POST"
         >
           <label className="contact__form__email" htmlFor="_replyto">
